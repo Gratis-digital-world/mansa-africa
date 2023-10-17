@@ -2,6 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Bold-Italic.ttf")
+    format("truetype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Bold.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Italic.ttf")
+    format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Light-Italic.ttf")
+    format("truetype");
+  font-style: italic;
+  font-weight: lighter;
+  font-display: swap;
+} */
+
+/* @font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Light.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: lighter;
+  font-display: swap;
+} */
+
+/* @font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Medium-Italic.ttf")
+    format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+} */
+
+/* @font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Medium.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-Regular.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-SemiBold-Italic.ttf")
+    format("truetype");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EuclidCircularA";
+  src: url("../public/fonts/euclid/Euclid-Circular-A-SemiBold.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,6 +107,7 @@
 }
 
 body {
+  font-family: EuclidCircularA;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +115,47 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.profile-1 {
+  background-image: url("../public/images/profile-1.png");
+}
+
+.profile-2 {
+  background-image: url("../public/images/profile-2.png");
+}
+
+.profile-3 {
+  background-image: url("../public/images/profile-3.png");
+}
+
+.blue-slant {
+  background-image: url("../public/images/blue-slant.png");
+}
+
+.bl-sln-div {
+  background-image: url("../public/images/bl-sln-div.png");
+}
+
+.bl-ye-div {
+  background-image: url("../public/images/bl-ye-div.png");
+}
+
+input,
+select {
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 8px;
+  background: linear-gradient(0deg, #f9fafb, #f9fafb),
+    linear-gradient(0deg, #e5e7eb, #e5e7eb);
+}
+
+.app-form {
+  display: none;
+}
+
+.app-form.active {
+  display: block;
 }
