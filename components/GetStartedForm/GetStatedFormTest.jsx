@@ -126,7 +126,10 @@ function GetStatedForm() {
             ></div>
 
             <div className="flex-1 py-4">
-              <button className="w-full bg-cyan-300 rounded-lg p-2 text-white font-semibold">
+              <button
+                // type="button"
+                className="w-full bg-cyan-300 rounded-lg p-2 text-white font-semibold"
+              >
                 Submit
               </button>
             </div>

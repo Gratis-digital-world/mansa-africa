@@ -15,6 +15,7 @@ function Navbar() {
       <div className="flex items-center justify-end pr-4">
         <Link href={"/start"}>
           <button
+            type="button"
             className={`rounded-lg bg-[#F3D31D] px-4 py-2 text-base text-[#18181B]`}
           >
             Get Started

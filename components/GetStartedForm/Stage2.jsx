@@ -27,8 +27,8 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="firstname"
-                id="firstname"
+                name="firstname_1"
+                id="firstname_1"
                 placeholder=""
               />
             </div>
@@ -43,8 +43,8 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="lastname"
-                id="lastname"
+                name="lastname_1"
+                id="lastname_1"
                 placeholder=""
               />
             </div>
@@ -59,8 +59,8 @@ function Stage2() {
               <input
                 className="w-full uppercase"
                 type="date"
-                name="date_of_birth"
-                id="date_of_birth"
+                name="date_of_birth_1"
+                id="date_of_birth_1"
                 placeholder="dd-mm-yyyy"
               />
             </div>
@@ -72,7 +72,7 @@ function Stage2() {
               <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <select className="w-full pl-2" id="country" name="country">
+              <select className="w-full pl-2" id="country_1" name="country_1">
                 <Countries />
               </select>
             </div>
@@ -87,8 +87,8 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="role"
-                id="role"
+                name="role_1"
+                id="role_1"
                 placeholder=""
               />
             </div>
@@ -105,8 +105,8 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="percentage_owned"
-                id="percentage_owned"
+                name="percentage_owned_1"
+                id="percentage_owned_1"
                 placeholder=""
               />
             </div>
@@ -114,7 +114,10 @@ function Stage2() {
 
           <div className="text-sm border-t-[0.025rem] w-full flex py-2 xb-6">
             <div className="pl-8">
-              <button className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6">
+              <button
+                type="button"
+                className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+              >
                 Remove profile
               </button>
             </div>
@@ -137,8 +140,8 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="firstname"
-                id="firstname"
+                name="firstname_2"
+                id="firstname_2"
                 placeholder=""
               />
             </div>
@@ -153,8 +156,8 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="lastname"
-                id="lastname"
+                name="lastname_2"
+                id="lastname_2"
                 placeholder=""
               />
             </div>
@@ -169,8 +172,8 @@ function Stage2() {
               <input
                 className="w-full uppercase"
                 type="date"
-                name="date_of_birth"
-                id="date_of_birth"
+                name="date_of_birth_2"
+                id="date_of_birth_2"
                 placeholder="dd-mm-yyyy"
               />
             </div>
@@ -182,7 +185,7 @@ function Stage2() {
               <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <select className="w-full pl-2" id="country" name="country">
+              <select className="w-full pl-2" id="country_2" name="country_2">
                 <Countries />
               </select>
             </div>
@@ -197,8 +200,8 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="role"
-                id="role"
+                name="role_2"
+                id="role_2"
                 placeholder=""
               />
             </div>
@@ -215,23 +218,30 @@ function Stage2() {
               <input
                 className="w-full"
                 type="text"
-                name="percentage_owned"
-                id="percentage_owned"
+                name="percentage_owned_2"
+                id="percentage_owned_2"
                 placeholder=""
               />
             </div>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 xb-6">
+          <div className="remove-profile-2 text-sm border-t-[0.025rem] w-full flex py-2 xb-6">
             <div className="pl-8">
-              <button className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6">
+              <button
+                type="button"
+                className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+              >
                 Remove profile
               </button>
             </div>
           </div>
         </div>
+
         <div className="pl-8 pb-6">
-          <button className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1">
+          <button
+            type="button"
+            className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
+          >
             <div className="">
               <Image src={AddCircle.src} width={12} height={12} alt="" />
             </div>

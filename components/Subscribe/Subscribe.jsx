@@ -15,6 +15,7 @@ function Subscribe() {
         <div className="lg:-mt-12 flex items-center justify-end w-full">
           <Link href={"/start"}>
             <button
+              type="button"
               className={`rounded-lg bg-[#010DFF] px-4 py-2 text-base text-[#fff]`}
             >
               Get Started
