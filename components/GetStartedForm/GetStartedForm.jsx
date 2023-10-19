@@ -55,16 +55,16 @@ function GetStartedForm() {
     })
       .then(() => {
         //upload files
-        fetch("http://localhost:3001/upload", {
-          method: "POST",
-          body: data,
-        })
-          .then(() => {
-            console.log("Success Upload!");
-          })
-          .catch((e) => {
-            console.log(e);
-          });
+        // fetch("http://localhost:3001/upload", {
+        //   method: "POST",
+        //   body: data,
+        // })
+        //   .then(() => {
+        //     console.log("Success Upload!");
+        //   })
+        //   .catch((e) => {
+        //     console.log(e);
+        //   });
         //===================
 
         //Set success message
