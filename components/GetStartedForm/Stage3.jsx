@@ -33,8 +33,8 @@ function Stage3() {
             </span>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 pb-6">
-            <div className="pl-8 pt-4 w-full">
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal First Name </span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
@@ -48,8 +48,8 @@ function Stage3() {
             </div>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 pb-6">
-            <div className="pl-8 pt-4 w-full">
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal Last Name </span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
@@ -63,8 +63,8 @@ function Stage3() {
             </div>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 pb-6">
-            <div className="pl-8 pt-4 w-full">
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Shares</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
@@ -78,8 +78,8 @@ function Stage3() {
             </div>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 xb-6">
-            <div className="pl-8">
+          <div className="text-sm border-t-[0.025rem] w-full py-2">
+            <div className="lg:pl-8 pl-4">
               <button
                 type="button"
                 className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
@@ -99,11 +99,11 @@ function Stage3() {
             </span>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 pb-6">
-            <div className="pl-8 pt-4 w-full">
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal First Name </span>
             </div>
-            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+            <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
                 className="w-full"
                 type="text"
@@ -114,11 +114,11 @@ function Stage3() {
             </div>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 pb-6">
-            <div className="pl-8 pt-4 w-full">
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal Last Name </span>
             </div>
-            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+            <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
                 className="w-full"
                 type="text"
@@ -129,11 +129,11 @@ function Stage3() {
             </div>
           </div>
 
-          <div className="text-sm border-t-[0.025rem] w-full flex py-2 pb-6">
-            <div className="pl-8 pt-4 w-full">
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Shares</span>
             </div>
-            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+            <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
                 className="w-full"
                 type="text"
@@ -144,8 +144,8 @@ function Stage3() {
             </div>
           </div>
 
-          <div className="remove-profile-3 text-sm border-t-[0.025rem] w-full flex py-2 pb-3">
-            <div className="pl-8">
+          <div className="remove-profile-3 text-sm border-t-[0.025rem] w-full py-2 pb-3">
+            <div className="lg:pl-8 pl-4">
               <button
                 type="button"
                 className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"

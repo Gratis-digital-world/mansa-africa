@@ -22,6 +22,7 @@ function EMProfiles() {
           </span>
         </div>
       </div>
+
       <div className="pl-8 pb-6">
         <button
           className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
@@ -33,8 +34,9 @@ function EMProfiles() {
           <div className="">Add another profile</div>
         </button>
       </div>
-      <div className="text-sm border-t-[0.025rem] w-full flex items-center pb-4">
-        <div className="px-8 pt-4 w-2/3">
+
+      <div className="text-sm border-t-[0.025rem] w-full lg:flex items-center pb-4">
+        <div className="px-8 pt-4 lg:w-2/3">
           <p>
             <span className="font-semibold">
               MANSA authorization letter for appointing the platform
@@ -49,6 +51,7 @@ function EMProfiles() {
             First, download the sample, then upload the form when completed.
           </p>
         </div>
+
         <div className="flex">
           <div className="w-full">
             <div className="pl-8">
@@ -62,7 +65,7 @@ function EMProfiles() {
               </Link>
             </div>
           </div>
-          <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+          <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
             <UploadFile
               image={ClickToUpload.src}
               input_id={"authorization_letter"}
@@ -71,8 +74,9 @@ function EMProfiles() {
           </div>
         </div>
       </div>
-      <div className="text-sm border-t-[0.025rem] w-full flex items-center pb-4">
-        <div className="px-8 pt-4 w-2/3">
+
+      <div className="text-sm border-t-[0.025rem] w-full lg:flex items-center pb-4">
+        <div className="px-8 pt-4 lg:w-2/3">
           <p>
             <span className="font-semibold">MANSA Questionnaire for SMEs</span>{" "}
             <span className="italic">
@@ -83,6 +87,7 @@ function EMProfiles() {
             First, download the sample, then upload the form when completed.
           </p>
         </div>
+
         <div className="flex">
           <div className="w-full">
             <div className="pl-8">
@@ -96,7 +101,7 @@ function EMProfiles() {
               </Link>
             </div>
           </div>
-          <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+          <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
             <UploadFile
               image={ClickToUpload.src}
               input_id={"questionnaire"}
@@ -105,8 +110,9 @@ function EMProfiles() {
           </div>
         </div>
       </div>
-      <div className="text-sm border-t-[0.025rem] w-full flex items-center pb-4">
-        <div className="px-8 pt-4 w-2/3">
+
+      <div className="text-sm border-t-[0.025rem] w-full lg:flex items-center pb-4">
+        <div className="px-8 pt-4 lg:w-2/3">
           <p>
             <span className="font-semibold">MANSA Contribution Agreement</span>{" "}
             <span className="italic">
@@ -130,7 +136,7 @@ function EMProfiles() {
               </Link>
             </div>
           </div>
-          <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+          <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
             <UploadFile
               image={ClickToUpload.src}
               input_id={"con_agreement"}
@@ -179,7 +185,7 @@ function EMProfiles() {
         </div>
       </div>
       <div
-        className="text-xs font-semibold text-center border-t-[0.025rem] w-full items-center justify-between h-16 text-red-600 "
+        className="text-xs font-semibold text-center border-t-[0.025rem] w-full items-center justify-between lg:h-16 h-4 text-red-600 "
         id="msg"
       ></div>
       <div className="text-base border-t-[0.025rem] w-full pb-4">

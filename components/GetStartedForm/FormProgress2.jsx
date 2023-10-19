@@ -2,7 +2,7 @@ import React from "react";
 
 function FormProgress2() {
   return (
-    <div className="grid grid-cols-2 gap-4 py-8">
+    <div className="lg:grid grid-cols-2 gap-4 py-8">
       <div className="font-semibold pl-8">
         Profiles of Owner/Directors/Shareholders
       </div>

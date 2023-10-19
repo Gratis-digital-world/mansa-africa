@@ -10,7 +10,7 @@ function Stage1() {
   return (
     <div
       data-step
-      className="app-form active w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className="active app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       <FormProgress1 />
 

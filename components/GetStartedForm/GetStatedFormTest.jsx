@@ -8,23 +8,31 @@ function GetStatedForm() {
   const [email, setEmail] = useState("");
   const [phoneno, setPhoneno] = useState("");
 
+  const [file, setFile] = useState(null);
+
+  function handleFile(e) {
+    setFile(e.target.files[0]);
+    console.log(e.target.files[0]);
+  }
+
   const clearForm = () => {
     setFirstname("");
     setLastname("");
     setEmail("");
     setPhoneno("");
+    setFile(null);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // alert("Application completed !");
 
-    // const dataSource = document.querySelector("gsform");
-
     const dataSource = document.forms["submit-to-spreadsheet"];
 
-    const data = new FormData(dataSource);
-    console.log(data);
+    const formdata = new FormData(dataSource);
+
+    formdata.append("file", file);
+    // console.log(formdata);
 
     const url =
       "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
@@ -33,9 +41,15 @@ function GetStatedForm() {
 
     fetch(url, {
       method: "POST",
-      body: data,
+      body: formdata,
+      // headers: {
+      //   "Custom-Header": "value",
+      // },
     })
-      .then(() => {
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Bad Response !");
+        }
         //Set success message
         msg.innerHTML = "Application completed !";
 
@@ -47,12 +61,12 @@ function GetStatedForm() {
         //Clear form
         clearForm();
         dataSource.reset();
+
+        return res.json();
       })
-
+      .then((data) => console.log(data))
       .catch((error) => {
-        // console.log(error);
-
-        //Set success message
+        //Set error message
         msg.innerHTML = error.message;
 
         //Clear displayed message
@@ -119,6 +133,20 @@ function GetStatedForm() {
                 required
               />
             </div>
+
+            {/* =========================== */}
+            <div className="flex-1 py-4">
+              <input
+                className="w-full"
+                name="file"
+                id="file"
+                type="file"
+                placeholder="select file"
+                required
+                onChange={handleFile}
+              />
+            </div>
+            {/* =========================== */}
 
             <div
               className="h-4 text-center  text-red-600 font-semibold text-xs"
