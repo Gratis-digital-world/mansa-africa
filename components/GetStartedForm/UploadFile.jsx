@@ -1,20 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 function UploadFile({ image, input_id, file_type }) {
   const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState(null);
 
-  function handleFile(e) {
-    setFile(e.target.files[0]);
-    console.log(e.target.files[0]);
-  }
+  // rendering previews
+  useEffect(() => {
+    if (!file) return;
+
+    let tmp = [];
+    for (let i = 0; i < file.length; i++) {
+      tmp.push(URL.createObjectURL(file[i]));
+    }
+    const objectUrls = tmp;
+    setPreview(objectUrls);
+
+    // setTimeout(() => {
+    //   msg.innerHTML = "";
+    // }, 5000);
+
+    // free memory
+    for (let i = 0; i < objectUrls.length; i++) {
+      return () => {
+        URL.revokeObjectURL(objectUrls[i]);
+      };
+    }
+  }, [file]);
 
   return (
     <div>
       {/* --------------- */}
       <label htmlFor={`${input_id}`}>
         <Image
-          className="cursor-pointer"
+          // id="upimg"
+          id={`${input_id}_oimg`}
+          className="object-fill cursor-pointer rounded-lg h-[100px] w-[150px]"
           src={image}
           width={150}
           height={100}
@@ -27,8 +48,27 @@ function UploadFile({ image, input_id, file_type }) {
         name={`${input_id}`}
         type="file"
         accept={`${file_type}`}
-        onChange={(e) => setFile(e.target.files[0])}
+        onChange={(e) => {
+          const upImg = document.getElementById(`${input_id}_oimg`);
+
+          if (e.target.files.length > 0) {
+            upImg.style.display = "none";
+            setFile(e.target.files);
+          }
+        }}
       />
+      {preview &&
+        preview.map((pic) => {
+          return (
+            <>
+              <UploadFile
+                image={pic}
+                input_id={`${input_id}`}
+                file_type={`${file_type}`}
+              />
+            </>
+          );
+        })}
       {/* --------------- */}
     </div>
   );

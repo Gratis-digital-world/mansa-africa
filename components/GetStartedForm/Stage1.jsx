@@ -22,28 +22,10 @@ function Stage1() {
         </div>
         <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
           <UploadFile
-            image={UploadLogo.src}
+            image={ClickToUpload.src}
             input_id={"company_logo"}
             file_type={"image/png, image/jpeg"}
           />
-          {/* --------------- */}
-          {/* <label htmlFor="company_logo">
-            <Image
-              className="cursor-pointer"
-              src={UploadLogo.src}
-              width={150}
-              height={100}
-              alt=""
-            />
-          </label>
-
-          <input
-            hidden
-            id="company_logo"
-            type="file"
-            accept="image/png, image/jpeg"
-          /> */}
-          {/* --------------- */}
         </div>
       </div>
 
@@ -66,9 +48,10 @@ function Stage1() {
         </div>
         <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
           <UploadFile
-            image={Uploading.src}
+            image={ClickToUpload.src}
             input_id={"mou"}
-            file_type={"application/pdf, application/doc*"}
+            // file_type={"application/pdf, application/doc*"}
+            file_type={"image/png, image/jpeg, application/pdf"}
           />
         </div>
       </div>
@@ -77,7 +60,7 @@ function Stage1() {
         <div className="pl-8 pt-4 w-full font-semibold">Tax certificate</div>
         <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
           <UploadFile
-            image={Uploading.src}
+            image={ClickToUpload.src}
             input_id={"tax_cert"}
             file_type={"image/png, image/jpeg"}
           />

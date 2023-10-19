@@ -55,7 +55,10 @@ function EMProfiles() {
         <div className="flex">
           <div className="w-full">
             <div className="pl-8">
-              <Link href={"/sample-files/mansa-authorization-letter.pdf"}>
+              <Link
+                href={"/sample-files/mansa-authorization-letter.pdf"}
+                target="_blank"
+              >
                 <button
                   className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
                   type="button"
@@ -69,7 +72,8 @@ function EMProfiles() {
             <UploadFile
               image={ClickToUpload.src}
               input_id={"authorization_letter"}
-              file_type={"application/pdf, application/doc*"}
+              //   file_type={"application/pdf, application/doc*"}
+              file_type={"image/png, image/jpeg"}
             />
           </div>
         </div>
@@ -91,7 +95,10 @@ function EMProfiles() {
         <div className="flex">
           <div className="w-full">
             <div className="pl-8">
-              <Link href={"/sample-files/mansa-questionnaire-for-smes.pdf"}>
+              <Link
+                href={"/sample-files/mansa-questionnaire-for-smes.pdf"}
+                target="_blank"
+              >
                 <button
                   className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
                   type="button"
@@ -105,7 +112,8 @@ function EMProfiles() {
             <UploadFile
               image={ClickToUpload.src}
               input_id={"questionnaire"}
-              file_type={"application/pdf, application/doc*"}
+              //   file_type={"application/pdf, application/doc*"}
+              file_type={"image/png, image/jpeg"}
             />
           </div>
         </div>
@@ -126,7 +134,10 @@ function EMProfiles() {
         <div className="flex">
           <div className="w-full">
             <div className="pl-8">
-              <Link href={"/sample-files/mansa-contribution-agreement.pdf"}>
+              <Link
+                href={"/sample-files/mansa-contribution-agreement.pdf"}
+                target="_blank"
+              >
                 <button
                   className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
                   type="button"
@@ -140,7 +151,8 @@ function EMProfiles() {
             <UploadFile
               image={ClickToUpload.src}
               input_id={"con_agreement"}
-              file_type={"application/pdf, application/doc*"}
+              //   file_type={"application/pdf, application/doc*"}
+              file_type={"image/png, image/jpeg"}
             />
           </div>
         </div>
@@ -154,33 +166,38 @@ function EMProfiles() {
         </div>
         <div className="px-8 pt-2 w-full flex items-center gap-4">
           <UploadFile
-            image={Uploading.src}
+            image={ClickToUpload.src}
             input_id={"asoc_mem_1"}
-            file_type={"image/png, image/jpeg, application/pdf"}
+            // file_type={"image/png, image/jpeg, application/pdf"}
+            file_type={"image/png, image/jpeg"}
           />
 
           <UploadFile
-            image={Uploading.src}
+            image={ClickToUpload.src}
             input_id={"asoc_mem_2"}
-            file_type={"image/png, image/jpeg, application/pdf"}
+            // file_type={"image/png, image/jpeg, application/pdf"}
+            file_type={"image/png, image/jpeg"}
           />
 
           <UploadFile
-            image={Uploading.src}
+            image={ClickToUpload.src}
             input_id={"asoc_mem_3"}
-            file_type={"image/png, image/jpeg, application/pdf"}
+            // file_type={"image/png, image/jpeg, application/pdf"}
+            file_type={"image/png, image/jpeg"}
           />
 
           <UploadFile
-            image={Uploading.src}
+            image={ClickToUpload.src}
             input_id={"asoc_mem_4"}
-            file_type={"image/png, image/jpeg, application/pdf"}
+            // file_type={"image/png, image/jpeg, application/pdf"}
+            file_type={"image/png, image/jpeg"}
           />
 
           <UploadFile
-            image={Uploading.src}
+            image={ClickToUpload.src}
             input_id={"asoc_mem_5"}
-            file_type={"image/png, image/jpeg, application/pdf"}
+            // file_type={"image/png, image/jpeg, application/pdf"}
+            file_type={"image/png, image/jpeg"}
           />
         </div>
       </div>
