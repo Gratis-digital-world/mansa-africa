@@ -16,10 +16,6 @@ function UploadFile({ image, input_id, file_type }) {
     const objectUrls = tmp;
     setPreview(objectUrls);
 
-    // setTimeout(() => {
-    //   msg.innerHTML = "";
-    // }, 5000);
-
     // free memory
     for (let i = 0; i < objectUrls.length; i++) {
       return () => {
@@ -44,8 +40,10 @@ function UploadFile({ image, input_id, file_type }) {
       </label>
       <input
         hidden
+        // required
         id={`${input_id}`}
         name={`${input_id}`}
+        // name="formfile"
         type="file"
         accept={`${file_type}`}
         onChange={(e) => {
@@ -54,6 +52,24 @@ function UploadFile({ image, input_id, file_type }) {
           if (e.target.files.length > 0) {
             upImg.style.display = "none";
             setFile(e.target.files);
+
+            //upload files
+            const dataSource = document.forms["mansa-form-main"];
+            const data = new FormData(dataSource);
+
+            data.append("formfile", e.target.files);
+
+            fetch("http://localhost:3001/upload", {
+              method: "POST",
+              body: data,
+            })
+              .then(() => {
+                console.log("Success Upload!");
+              })
+              .catch((e) => {
+                console.log(e);
+              });
+            //===================
           }
         }}
       />
