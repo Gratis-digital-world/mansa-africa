@@ -21,14 +21,12 @@ function Stage3() {
       x.style.display = "block";
       y.style.display = "none";
     }
-
-    console.log("llwl");
   };
 
   return (
     <div
       data-step
-      className="app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className="active app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       <FormProgress3 />
 
@@ -103,40 +101,12 @@ function Stage3() {
             </div>
           </div>
 
-          {/* <div className="text-sm border-t-[0.025rem] w-full py-2">
-            <div className="lg:pl-8 pl-4">
-              <button
-                type="button"
-                className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
-              >
-                Remove profile
-              </button>
-            </div>
-          </div> */}
-
-          <div className="remove-profile-3 text-sm border-t-[0.025rem] flex w-full py-2 pb-3 hidden">
-            <div className="lg:pl-8 pl-4 hidden">
-              <button
-                type="button"
-                className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-4"
-              >
-                Remove profile
-              </button>
-            </div>
-
-            {/* <div className="lg:pl-8 pl-4" id="another-profile-btn">
-              <button
-                type="button"
-                className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-                onClick={handleProfile}
-              >
-                <div className="">
-                  <Image src={AddCircle.src} width={12} height={12} alt="" />
-                </div>
-                <div className="">Add another profile</div>
-              </button>
-            </div> */}
-          </div>
+          {/* ++++++++++++++++++++++++++++++ */}
+          <div
+            id="ubo-1-err"
+            className="h-4 pt-2 mb-2 flex items-center justify-center italic text-xs text-red-500"
+          ></div>
+          {/* ++++++++++++++++++++++++++++++ */}
         </div>
 
         <div className="pl-8 pb-4" id="another-profile-btn-3">
@@ -220,31 +190,6 @@ function Stage3() {
             </div>
           </div>
         </div>
-
-        {/* <div className="pl-8 pb-6">
-          <button
-            type="button"
-            className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-          >
-            <div className="">
-              <Image src={AddCircle.src} width={12} height={12} alt="" />
-            </div>
-            <div className="">Add another profile</div>
-          </button>
-        </div> */}
-
-        {/* <div className="lg:pl-8 pl-4 pb-4" id="-3">
-          <button
-            type="button"
-            className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-            onClick={handleProfile}
-          >
-            <div className="">
-              <Image src={AddCircle.src} width={12} height={12} alt="" />
-            </div>
-            <div className="">Add another profile</div>
-          </button>
-        </div> */}
       </div>
 
       <EMProfiles />

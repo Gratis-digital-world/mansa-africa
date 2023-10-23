@@ -1,19 +1,38 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import RepImage from "@/public/images/doc-preview.png";
 
 function UploadFile({ image, input_id, file_type }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
 
-  // rendering previews
-  useEffect(() => {
-    if (!file) return;
+  let theBlob;
+
+  fetch(RepImage.src)
+    .then((response) => response.blob())
+    .then((imageBlob) => {
+      theBlob = imageBlob;
+      // console.log("none image file");
+    })
+    .catch((error) => {
+      console.error("Error converting image to Blob:", error);
+    });
+
+  const previewFile = (thefile) => {
+    if (!thefile) return false;
 
     let tmp = [];
-    for (let i = 0; i < file.length; i++) {
-      tmp.push(URL.createObjectURL(file[i]));
+
+    if (thefile[0].type.startsWith("image")) {
+      for (let i = 0; i < thefile.length; i++) {
+        tmp.push(URL.createObjectURL(thefile[i]));
+      }
+    } else {
+      tmp.push(URL.createObjectURL(theBlob));
     }
+
     const objectUrls = tmp;
+
     setPreview(objectUrls);
 
     // free memory
@@ -22,14 +41,36 @@ function UploadFile({ image, input_id, file_type }) {
         URL.revokeObjectURL(objectUrls[i]);
       };
     }
-  }, [file]);
+    // console.log(objectUrls + " - objecturl");
+
+    return true;
+  };
+
+  const uploadSingleFile = () => {
+    //upload files
+    const dataSource = document.forms["mansa-form-main"];
+    const data = new FormData(dataSource);
+
+    // data.append(`${input_id}`, e.target.files);
+
+    fetch("http://localhost:3001/upload", {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        console.log("Success Upload!");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    //===================
+  };
 
   return (
     <div>
       {/* --------------- */}
       <label htmlFor={`${input_id}`}>
         <Image
-          // id="upimg"
           id={`${input_id}_oimg`}
           className="object-fill cursor-pointer rounded-lg h-[100px] w-[150px]"
           src={image}
@@ -53,23 +94,12 @@ function UploadFile({ image, input_id, file_type }) {
             upImg.style.display = "none";
             setFile(e.target.files);
 
-            //upload files
-            const dataSource = document.forms["mansa-form-main"];
-            const data = new FormData(dataSource);
+            previewFile(e.target.files);
+            // Call upload function
+            // multiple upload occurs for each
+            //(not efficient)
 
-            data.append("formfile", e.target.files);
-
-            fetch("http://localhost:3001/upload", {
-              method: "POST",
-              body: data,
-            })
-              .then(() => {
-                console.log("Success Upload!");
-              })
-              .catch((e) => {
-                console.log(e);
-              });
-            //===================
+            // uploadSingleFile();
           }
         }}
       />
@@ -81,6 +111,7 @@ function UploadFile({ image, input_id, file_type }) {
                 image={pic}
                 input_id={`${input_id}`}
                 file_type={`${file_type}`}
+                key={"x"}
               />
             </>
           );

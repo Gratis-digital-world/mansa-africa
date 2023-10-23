@@ -5,12 +5,13 @@ import ClickToUpload from "@/public/images/click-to-upload.png";
 import Uploading from "@/public/images/uploading.png";
 import FormProgress1 from "../GetStartedForm/FormProgress1";
 import UploadFile from "../GetStartedForm/UploadFile";
+import NextButton from "../GetStartedForm/NextButton";
 
 function Stage1() {
   return (
     <div
       data-step
-      className="active app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className="app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       <FormProgress1 />
 
@@ -74,14 +75,15 @@ function Stage1() {
         </div>
       </div>
 
-      <div className="text-base border-t-[0.025rem] w-full flex items-center justify-center pb-4">
-        <button
-          data-next
-          className="bg-[#010DFF] rounded-lg text-white  w-1/2 p-2 py-4 mt-6"
-          type="button"
-        >
-          Next
-        </button>
+      {/* ++++++++++++++++++++++++++++++ */}
+      <div
+        id="stage1-err"
+        className="h-4 pt-2 flex items-center justify-center italic text-xs text-red-500"
+      ></div>
+      {/* ++++++++++++++++++++++++++++++ */}
+
+      <div className="text-base mt-4 border-t-[0.025rem] w-full flex items-center justify-center pb-4">
+        <NextButton caption="Next" />
       </div>
     </div>
   );

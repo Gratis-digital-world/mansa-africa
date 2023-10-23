@@ -5,6 +5,8 @@ import AddCircle from "@/public/images/add-circle.png";
 import ClickToUpload from "@/public/images/click-to-upload.png";
 import Uploading from "@/public/images/uploading.png";
 import UploadFile from "./UploadFile";
+import NextButton from "./NextButton";
+import PrevButton from "./PrevButton";
 
 function EMProfiles() {
   const [emp_fname_1, setEMPFname1] = useState();
@@ -32,8 +34,8 @@ function EMProfiles() {
           <span className="font-semibold">Executive Management Profiles</span>{" "}
           <span className="italic">
             (This item is referring to the CV or biography of the members of the
-            Management Committee of the entity ( DG, CEO, DGA, CFA, Legal
-            Director, Compliance Director etc. Provide if available)
+            Management Committee of the entity (DG, CEO, DGA, CFA, Legal
+            Director, Compliance Director etc. Provide if available).
           </span>
         </div>
       </div>
@@ -61,8 +63,8 @@ function EMProfiles() {
               <input
                 className="w-full"
                 type="text"
-                name="ubo_firstname_1"
-                id="ubo_firstname_1"
+                name="emp_firstname_1"
+                id="emp_firstname_1"
                 placeholder=""
                 onChange={(e) => setEMPFname1(e.target.value)}
                 required
@@ -104,16 +106,27 @@ function EMProfiles() {
             </div>
           </div>
 
-          {/* <div className="remove-profile-emp-1 text-sm border-t-[0.025rem] flex w-full py-2 pb-3 hiddenc">
-            <div className="lg:pl-8 pl-4">
-              <button
-                type="button"
-                className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-4"
-              >
-                Remove profile-x
-              </button>
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
+              <span className="font-semibold">Upload resume</span>
             </div>
-          </div> */}
+            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+              <UploadFile
+                image={ClickToUpload.src}
+                input_id={"emp_resume_1"}
+                file_type={
+                  "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+                }
+              />
+            </div>
+          </div>
+
+          {/* ++++++++++++++++++++++++++++++ */}
+          <div
+            id="emp-1-err"
+            className="h-4 pt-2 mb-2 flex items-center justify-center italic text-xs text-red-500"
+          ></div>
+          {/* ++++++++++++++++++++++++++++++ */}
         </div>
 
         <div className="pl-8 pb-4" id="another-profile-btn-emp-1">
@@ -130,7 +143,7 @@ function EMProfiles() {
         </div>
       </div>
 
-      <div className="emp-profile-2" id="emp-profile-2">
+      <div className="hidden emp-profile-2" id="emp-profile-2">
         <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 pbb-4 mb-4">
           <div className="pt-4 px-8 pb-3 w-full h-12">
             <span className="text-xs opacity-70" id="emp_2" name="emp_2">
@@ -146,11 +159,11 @@ function EMProfiles() {
               <input
                 className="w-full"
                 type="text"
-                name="ubo_firstname_2"
-                id="ubo_firstname_2"
+                name="emp_firstname_2"
+                id="emp_firstname_2"
                 placeholder=""
                 onChange={(e) => setEMPFname2(e.target.value)}
-                required
+                // required
               />
             </div>
           </div>
@@ -167,7 +180,7 @@ function EMProfiles() {
                 id="emp_lastname_2"
                 placeholder=""
                 onChange={(e) => setEMPLname2(e.target.value)}
-                required
+                // required
               />
             </div>
           </div>
@@ -184,7 +197,22 @@ function EMProfiles() {
                 name="emp_bio_2"
                 id="emp_bio_2"
                 placeholder=""
-                required
+                // required
+              />
+            </div>
+          </div>
+
+          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
+            <div className="lg:pl-8 pl-4 pt-4 w-full">
+              <span className="font-semibold">Upload resume</span>
+            </div>
+            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
+              <UploadFile
+                image={ClickToUpload.src}
+                input_id={"emp_resume_2"}
+                file_type={
+                  "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+                }
               />
             </div>
           </div>
@@ -194,6 +222,7 @@ function EMProfiles() {
               <button
                 type="button"
                 className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-4"
+                onClick={handleEMPProfile}
               >
                 Remove profile
               </button>
@@ -353,27 +382,27 @@ function EMProfiles() {
           />
         </div>
       </div>
-      <div
-        className="text-xs font-semibold text-center border-t-[0.025rem] w-full items-center justify-between lg:h-16 h-4 text-red-600 "
-        id="msg"
-      ></div>
-      <div className="text-base border-t-[0.025rem] w-full pb-4">
-        <div className="px-8 w-full flex items-center justify-center gap-4">
-          <button
-            type="button"
-            data-previous
-            className="bg-white rounded-lg text-black shadow-md w-1/2 p-2 py-4 mt-6"
-          >
-            Go Back
-          </button>
 
-          <button
-            // data-next
-            className="bg-[#010DFF] rounded-lg text-white shadow-md w-1/2 p-2 py-4 mt-6"
+      {/* ++++++++++++++++++++++++++++++ */}
+      <div
+        id="stage3-err"
+        className="h-4 pt-2 flex items-center justify-center italic text-xs text-red-500"
+      ></div>
+      {/* ++++++++++++++++++++++++++++++ */}
+
+      <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
+        <div className="px-8 w-full flex items-center justify-center gap-4">
+          <PrevButton />
+
+          <NextButton caption={"Submit"} />
+          {/* <button
+            data-next
+            className="bg-[#010DFF] rounded-lg text-white  w-1/2 p-2 py-4 mt-6"
             // type="button"
-          >
-            Submit
-          </button>
+          > */}
+          {/* {caption} */}
+          {/* Submit
+          </button> */}
         </div>
       </div>
     </div>
