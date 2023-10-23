@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Navbar from "@/components/Navbar/Navbar";
-import Map from "@/public/images/map.png";
+import Map from "@/public/images/map-mov.png";
 import Link from "next/link";
 
 function Hero() {
