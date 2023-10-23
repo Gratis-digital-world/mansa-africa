@@ -263,7 +263,9 @@ function EMProfiles() {
           <div className="w-full">
             <div className="pl-8">
               <Link
-                href={"/sample-files/mansa-authorization-letter.pdf"}
+                href={
+                  "/files/mansa-letter-of-administrator-appointment-sample.docx"
+                }
                 target="_blank"
               >
                 <button
@@ -302,10 +304,7 @@ function EMProfiles() {
         <div className="flex">
           <div className="w-full">
             <div className="pl-8">
-              <Link
-                href={"/sample-files/mansa-questionnaire-for-smes.pdf"}
-                target="_blank"
-              >
+              <Link href={"#"} target="_blank">
                 <button
                   className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
                   type="button"
@@ -341,10 +340,7 @@ function EMProfiles() {
         <div className="flex">
           <div className="w-full">
             <div className="pl-8">
-              <Link
-                href={"/sample-files/mansa-contribution-agreement.pdf"}
-                target="_blank"
-              >
+              <Link href={"#"} target="_blank">
                 <button
                   className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
                   type="button"
