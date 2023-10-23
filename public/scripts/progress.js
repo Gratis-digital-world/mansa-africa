@@ -118,14 +118,14 @@ multiStepForm.addEventListener("click", (e) => {
 
           const f_info = new FormData(multiStepForm);
 
-          // submitToExcelSheet(f_info);
+          submitToExcelSheet(f_info);
 
-          //First Make Sure upload is successful
-          const upRes = uploadDocuments(f_info);
+          // //First Make Sure upload is successful
+          // const upRes = uploadDocuments(f_info);
 
-          location.replace(
-            "/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm"
-          );
+          // location.replace(
+          //   "/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm"
+          // );
         }
 
         break;

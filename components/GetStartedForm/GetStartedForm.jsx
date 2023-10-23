@@ -27,7 +27,13 @@ function GetStartedForm() {
 
     // data.append(`${input_id}`, e.target.files);
 
-    fetch("http://localhost:3001/upload", {
+    const localUrl = "http://localhost:3001/upload";
+
+    // const liveUrl = "https://mansa-96a6c794c4b6.herokuapp.com/upload";
+
+    theUrl = localUrl;
+
+    fetch(theUrl, {
       method: "POST",
       body: data,
     })
