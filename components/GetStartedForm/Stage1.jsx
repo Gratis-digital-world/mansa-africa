@@ -25,8 +25,9 @@ function Stage1() {
           <UploadFile
             image={ClickToUpload.src}
             input_id={"company_logo"}
+            // file_type={"image/png, image/jpeg"}
             file_type={
-              "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+              "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
           />
         </div>
@@ -41,7 +42,7 @@ function Stage1() {
             image={ClickToUpload.src}
             input_id={"cert_of_inc"}
             file_type={
-              "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+              "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
           />
         </div>
@@ -56,7 +57,7 @@ function Stage1() {
             image={ClickToUpload.src}
             input_id={"mou"}
             file_type={
-              "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+              "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
           />
         </div>
@@ -69,7 +70,7 @@ function Stage1() {
             image={ClickToUpload.src}
             input_id={"tax_cert"}
             file_type={
-              "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+              "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
           />
         </div>

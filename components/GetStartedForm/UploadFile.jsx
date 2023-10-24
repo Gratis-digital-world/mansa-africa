@@ -102,6 +102,8 @@ function UploadFile({ image, input_id, file_type }) {
             // uploadSingleFile();
           }
         }}
+
+        // asoc_mem_1
       />
       {preview &&
         preview.map((pic) => {

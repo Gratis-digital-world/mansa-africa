@@ -115,7 +115,7 @@ function EMProfiles() {
                 image={ClickToUpload.src}
                 input_id={"emp_resume_1"}
                 file_type={
-                  "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+                  "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 }
               />
             </div>
@@ -211,7 +211,7 @@ function EMProfiles() {
                 image={ClickToUpload.src}
                 input_id={"emp_resume_2"}
                 file_type={
-                  "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+                  "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 }
               />
             </div>
@@ -282,7 +282,7 @@ function EMProfiles() {
               image={ClickToUpload.src}
               input_id={"authorization_letter"}
               file_type={
-                "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+                "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               }
             />
           </div>
@@ -319,7 +319,7 @@ function EMProfiles() {
               image={ClickToUpload.src}
               input_id={"questionnaire"}
               file_type={
-                "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+                "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               }
             />
           </div>
@@ -355,7 +355,7 @@ function EMProfiles() {
               image={ClickToUpload.src}
               input_id={"con_agreement"}
               file_type={
-                "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+                "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               }
             />
           </div>
@@ -373,7 +373,7 @@ function EMProfiles() {
             image={ClickToUpload.src}
             input_id={"asoc_mem_1"}
             file_type={
-              "image/png, image/jpeg, application/pdf, application/doc, application/docx"
+              "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
           />
         </div>

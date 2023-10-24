@@ -6,6 +6,14 @@ import Script from "next/script";
 import Stage1 from "../GetStartedForm/Stage1";
 import Stage2 from "../GetStartedForm/Stage2";
 import Stage3 from "../GetStartedForm/Stage3";
+// import PopupTest from "../GetStartedForm/PopupTest";
+// import PopupError from "../GetStartedForm/PopupError";
+// {isPopupVisible && (
+//   <PopupError
+//     message="Custom error message goes here."
+//     onClose={handleClosePopup}
+//   />
+// )}
 
 function GetStartedForm() {
   const [firstname, setFirstname] = useState("");
@@ -14,6 +22,27 @@ function GetStartedForm() {
   const [phoneno, setPhoneno] = useState("");
 
   const [file, setFile] = useState(null);
+
+  //   //================================
+  //   const [isPopupVisible, setPopupVisible] = useState(false);
+
+  //   const handleShowPopup = () => {
+  //     setPopupVisible(true);
+  //   };
+
+  //   const handleClosePopup = () => {
+  //     setPopupVisible(false);
+  //   };
+
+  //   import PopupError from "../GetStartedForm/PopupError";
+  // {isPopupVisible && (
+  //   <PopupError
+  //     message="Custom error message goes here."
+  //     onClose={handleClosePopup}
+  //   />
+  // )}
+
+  //   //================================
 
   function handleFile(e) {
     setFile(e.target.files[0]);
@@ -130,6 +159,14 @@ function GetStartedForm() {
             <Stage2 />
             <Stage3 />
           </div>
+          {/* <PopupTest /> */}
+          {/* <button onClick={handleShowPopup}>Show Error Popup</button> */}
+          {/* {isPopupVisible && (
+            <PopupError
+              message="Custom error message goes here."
+              onClose={handleClosePopup}
+            />
+          )} */}
         </form>
       </div>
     </div>

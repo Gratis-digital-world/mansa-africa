@@ -118,10 +118,11 @@ multiStepForm.addEventListener("click", (e) => {
 
           const f_info = new FormData(multiStepForm);
 
-          submitToExcelSheet(f_info);
+          // submitToExcelSheet(f_info);
 
           // //First Make Sure upload is successful
           // const upRes = uploadDocuments(f_info);
+          uploadDocuments(f_info);
 
           // location.replace(
           //   "/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm"
@@ -262,10 +263,23 @@ const validate = (values) => {
     //=====================================
   }
 
+  sessionStorage.setItem("validationError", error.textContent);
+
   return validity;
 };
 
 const submitToExcelSheet = (data) => {
+  //==========================
+  const msg1 = document.getElementById("stage3-err");
+
+  msg1.innerHTML = "Loading ... !";
+
+  //Clear displayed message
+  setTimeout(() => {
+    msg1.innerHTML = "";
+  }, 5000);
+  //==========================
+
   //===========================
   const url =
     "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
@@ -278,7 +292,7 @@ const submitToExcelSheet = (data) => {
   })
     .then(() => {
       //upload files
-      //uploadDocuments(data);
+      uploadDocuments(data);
       //===================
       //Set success message
       msg.innerHTML = "Application completed !";
@@ -290,6 +304,8 @@ const submitToExcelSheet = (data) => {
 
       //Clear form
       // multiStepForm.reset();
+
+      // location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
     })
 
     .catch((err) => {
@@ -311,31 +327,38 @@ const uploadDocuments = (upload_data) => {
   const msg = document.getElementById("stage3-err");
 
   //upload files
-  fetch("http://localhost:3001/upload", {
+  msg.innerHTML = "Loading ... !";
+
+  // const u_url="http://localhost:3001/upload2"
+  const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
+
+  fetch(u_url, {
     method: "POST",
     body: upload_data,
   })
     .then((response) => {
-      console.log("Successful Upload!");
+      // console.log("Successful Upload!");
       // console.log(response.json());
       // console.log(response);
 
       //Set success message
       //==========================
-      msg.innerHTML = "Loading ... !";
+      // msg.innerHTML = "Loading ... !";
 
       //Clear displayed message
       setTimeout(() => {
-        msg.innerHTML = "";
+        msg.innerHTML = "Done";
+
+        location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
       }, 5000);
       //==========================
-
+      // console.log(response);
       //call sheet update
       // submitToExcelSheet(upload_data);
     })
     .then((data) => {
-      console.log("xxc");
-      console.log(data);
+      console.log("Works!");
+      // console.log(data);
     })
     .catch((e) => {
       console.log(e);
