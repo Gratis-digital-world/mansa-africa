@@ -10,6 +10,7 @@ function Stage2() {
   const [p_profile_1, setPProfile1] = useState();
   const [p_profile_2, setPProfile2] = useState();
 
+  const [powned, setPOwned1] = useState();
   const handleProfile = () => {
     var x = document.getElementById("another-profile-2");
     var y = document.getElementById("another-profile-btn-2");
@@ -31,7 +32,7 @@ function Stage2() {
   return (
     <div
       data-step
-      className="app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className="active app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       <FormProgress2 />
 
@@ -130,13 +131,18 @@ function Stage2() {
               <span className="text-red-700">*</span>
             </div>
             <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
-              <input
-                className="w-full"
-                type="text"
-                name="percentage_owned_1"
-                id="percentage_owned_1"
-                placeholder=""
-              />
+              <div className="items-center justify-end flex">
+                <input
+                  className="w-full text-right pr-4"
+                  type="number"
+                  name="percentage_owned_1"
+                  id="percentage_owned_1"
+                  min={0}
+                  max={100}
+                  placeholder=""
+                />
+                <p className="absolute text-right pr-4">%</p>
+              </div>
             </div>
           </div>
         </div>
@@ -250,13 +256,18 @@ function Stage2() {
                 <span className="text-red-700">*</span>
               </div>
               <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
-                <input
-                  className="w-full"
-                  type="text"
-                  name="percentage_owned_2"
-                  id="percentage_owned_2"
-                  placeholder=""
-                />
+                <div className="items-center justify-end flex">
+                  <input
+                    className="w-full text-right pr-4"
+                    type="number"
+                    name="percentage_owned_2"
+                    id="percentage_owned_2"
+                    min={0}
+                    max={100}
+                    placeholder=""
+                  />
+                  <p className="absolute text-right pr-4">%</p>
+                </div>
               </div>
             </div>
 
