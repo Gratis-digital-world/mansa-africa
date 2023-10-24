@@ -8,7 +8,13 @@ import PrevButton from "./PrevButton";
 
 function Stage2() {
   const [p_profile_1, setPProfile1] = useState();
-  const [p_profile_2, setPProfile2] = useState();
+
+  const [role2, setPODSRole2] = useState();
+  const [PODSFname2, setPODSFname2] = useState();
+  const [PODSLname2, setPODSLname2] = useState();
+  const [PODSDob2, setPODSDob2] = useState();
+  const [PODSCountry2, setPODSCountry2] = useState();
+  const [PODSPercentage2, setPODSPercentage2] = useState();
 
   const [powned, setPOwned1] = useState();
   const handleProfile = () => {
@@ -20,19 +26,20 @@ function Stage2() {
     } else {
       x.style.display = "block";
       y.style.display = "none";
+      //Clear form content
+      setPODSRole2("");
+      setPODSFname2("");
+      setPODSLname2("");
+      setPODSDob2("");
+      setPODSCountry2("");
+      setPODSPercentage2("");
     }
-  };
-
-  const handleStage1 = (e) => {
-    e.preventDefault();
-    // console.log("clicked");
-    // alert("Clicked !");
   };
 
   return (
     <div
       data-step
-      className="active app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className="app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       <FormProgress2 />
 
@@ -165,7 +172,7 @@ function Stage2() {
         <div className="second-profile">
           <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 pb-4">
             <div className="pt-4 px-8 pb-3 w-full">
-              <span className="text-xs">{p_profile_2} Profile</span>
+              <span className="text-xs">{role2} Profile</span>
             </div>
 
             <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
@@ -178,7 +185,8 @@ function Stage2() {
                   className="w-full"
                   name="role_2"
                   id="role_2"
-                  onChange={(e) => setPProfile2(e.target.value)}
+                  value={role2}
+                  onChange={(e) => setPODSRole2(e.target.value)}
                 >
                   <option value={""}></option>
                   <option value={"Owner"}>Owner</option>
@@ -200,6 +208,8 @@ function Stage2() {
                   name="firstname_2"
                   id="firstname_2"
                   placeholder=""
+                  value={PODSFname2}
+                  onChange={(e) => setPODSFname2(e.target.value)}
                 />
               </div>
             </div>
@@ -216,6 +226,8 @@ function Stage2() {
                   name="lastname_2"
                   id="lastname_2"
                   placeholder=""
+                  value={PODSLname2}
+                  onChange={(e) => setPODSLname2(e.target.value)}
                 />
               </div>
             </div>
@@ -232,6 +244,8 @@ function Stage2() {
                   name="date_of_birth_2"
                   id="date_of_birth_2"
                   // placeholder="dd-mm-yyyy"
+                  value={PODSDob2}
+                  onChange={(e) => setPODSDob2(e.target.value)}
                 />
               </div>
             </div>
@@ -242,7 +256,13 @@ function Stage2() {
                 <span className="text-red-700">*</span>
               </div>
               <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
-                <select className="w-full pl-2" id="country_2" name="country_2">
+                <select
+                  className="w-full pl-2"
+                  id="country_2"
+                  name="country_2"
+                  value={PODSCountry2}
+                  onChange={(e) => setPODSCountry2(e.target.value)}
+                >
                   <Countries />
                 </select>
               </div>
@@ -265,6 +285,8 @@ function Stage2() {
                     min={0}
                     max={100}
                     placeholder=""
+                    value={PODSPercentage2}
+                    onChange={(e) => setPODSPercentage2(e.target.value)}
                   />
                   <p className="absolute text-right pr-4">%</p>
                 </div>

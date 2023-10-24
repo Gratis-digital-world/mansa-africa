@@ -231,17 +231,7 @@ function EMProfiles() {
         </div>
       </div>
       {/* ============================= */}
-      {/* <div className="pl-8 pb-6">
-        <button
-          className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-          type="button"
-        >
-          <div className="">
-            <Image src={AddCircle.src} width={12} height={12} alt="" />
-          </div>
-          <div className="">Add another profile</div>
-        </button>
-      </div> */}
+
       <div className="text-sm border-t-[0.025rem] w-full lg:flex items-center pb-4">
         <div className="px-8 pt-4 lg:w-2/3">
           <p>
@@ -375,6 +365,7 @@ function EMProfiles() {
             file_type={
               "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
+            morefiles="multiple"
           />
         </div>
       </div>

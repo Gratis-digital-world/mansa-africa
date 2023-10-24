@@ -10,6 +10,7 @@ function Stage3() {
 
   const [fname_2, setFname2] = useState();
   const [lname_2, setLname2] = useState();
+  const [shares_2, setShares2] = useState();
 
   const handleProfile = () => {
     var x = document.getElementById("profile-of-beneficial-2");
@@ -20,6 +21,10 @@ function Stage3() {
     } else {
       x.style.display = "block";
       y.style.display = "none";
+      //Clear form content
+      setFname2("");
+      setLname2("");
+      setShares2("");
     }
   };
 
@@ -173,6 +178,7 @@ function Stage3() {
                 type="text"
                 name="ubo_shares_2"
                 id="ubo_shares_2"
+                onChange={(e) => setShares2(e.target.value)}
                 placeholder=""
               />
             </div>

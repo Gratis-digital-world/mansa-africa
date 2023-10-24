@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import RepImage from "@/public/images/doc-preview.png";
 
@@ -12,7 +12,6 @@ function UploadFile({ image, input_id, file_type }) {
     .then((response) => response.blob())
     .then((imageBlob) => {
       theBlob = imageBlob;
-      // console.log("none image file");
     })
     .catch((error) => {
       console.error("Error converting image to Blob:", error);
@@ -84,7 +83,6 @@ function UploadFile({ image, input_id, file_type }) {
         // required
         id={`${input_id}`}
         name={`${input_id}`}
-        // name="formfile"
         type="file"
         accept={`${file_type}`}
         onChange={(e) => {
@@ -95,15 +93,8 @@ function UploadFile({ image, input_id, file_type }) {
             setFile(e.target.files);
 
             previewFile(e.target.files);
-            // Call upload function
-            // multiple upload occurs for each
-            //(not efficient)
-
-            // uploadSingleFile();
           }
         }}
-
-        // asoc_mem_1
       />
       {preview &&
         preview.map((pic) => {

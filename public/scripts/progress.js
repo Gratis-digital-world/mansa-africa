@@ -268,63 +268,74 @@ const validate = (values) => {
   return validity;
 };
 
-const submitToExcelSheet = (data) => {
-  //==========================
-  const msg1 = document.getElementById("stage3-err");
+// const submitToExcelSheet = (data) => {
+//   //==========================
+//   const msg1 = document.getElementById("stage3-err");
 
-  msg1.innerHTML = "Loading ... !";
+//   msg1.innerHTML = "Loading ... !";
 
-  //Clear displayed message
-  setTimeout(() => {
-    msg1.innerHTML = "";
-  }, 5000);
-  //==========================
+//   //Clear displayed message
+//   setTimeout(() => {
+//     msg1.innerHTML = "";
+//   }, 5000);
+//   //==========================
 
-  //===========================
-  const url =
-    "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
+//   //===========================
+//   const url =
+//     "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
 
-  const msg = document.getElementById("stage3-err");
+//   const msg = document.getElementById("stage3-err");
 
-  fetch(url, {
-    method: "POST",
-    body: data,
-  })
-    .then(() => {
-      //upload files
-      uploadDocuments(data);
-      //===================
-      //Set success message
-      msg.innerHTML = "Application completed !";
+//   fetch(url, {
+//     method: "POST",
+//     body: data,
+//   })
+//     .then(() => {
+//       //upload files
+//       uploadDocuments(data);
+//       //===================
+//       // //Set success message
+//       // msg.innerHTML = "Application completed !";
 
-      //Clear displayed message
-      setTimeout(() => {
-        msg.innerHTML = "";
-      }, 5000);
+//       // //Clear displayed message
+//       // setTimeout(() => {
+//       //   msg.innerHTML = "";
+//       // }, 5000);
 
-      //Clear form
-      // multiStepForm.reset();
+//       //Clear form
+//       // multiStepForm.reset();
 
-      // location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
-    })
+//       // location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
+//     })
 
-    .catch((err) => {
-      // console.log(error);
+//     .catch((err) => {
+//       // console.log(error);
 
-      //Set error message
-      msg.innerHTML = err.message;
+//       //Set error message
+//       msg.innerHTML = err.message;
 
-      //Clear displayed message
-      setTimeout(() => {
-        msg.innerHTML = "";
-      }, 5000);
-    });
+//       //Clear displayed message
+//       setTimeout(() => {
+//         msg.innerHTML = "";
+//       }, 5000);
+//     });
 
-  //===========================
-};
+//   //===========================
+// };
 
 const uploadDocuments = (upload_data) => {
   const msg = document.getElementById("stage3-err");
+  //********************** */
+  var nextBtn = document.querySelectorAll("[id='nextButton']");
+
+  // for (var i = 0; i < nextBtn.length; i++) {
+  //   nextBtn[i].disabled = true;
+  // }
+
+  nextBtn[nextBtn.length - 1].disabled = true;
+  nextBtn[nextBtn.length - 1].innerHTML = "Processing ...";
+  //  nextBtn[i].textContent = "processing ..."
+  //********************** */
 
   //upload files
   msg.innerHTML = "Loading ... !";
@@ -337,24 +348,16 @@ const uploadDocuments = (upload_data) => {
     body: upload_data,
   })
     .then((response) => {
-      // console.log("Successful Upload!");
-      // console.log(response.json());
-      // console.log(response);
-
-      //Set success message
-      //==========================
-      // msg.innerHTML = "Loading ... !";
-
       //Clear displayed message
       setTimeout(() => {
         msg.innerHTML = "Done";
 
+        nextBtn[nextBtn.length - 1].disabled = false;
+        nextBtn[nextBtn.length - 1].innerHTML = "Done";
+
         location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
-      }, 5000);
+      }, 500);
       //==========================
-      // console.log(response);
-      //call sheet update
-      // submitToExcelSheet(upload_data);
     })
     .then((data) => {
       console.log("Works!");
