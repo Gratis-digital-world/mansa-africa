@@ -38,7 +38,8 @@ function NextButton({ caption }) {
 
       {isPopupVisible && (
         <PopupError
-          message={sessionStorage.getItem("validationError")} //"Custom error message goes here."
+          message={sessionStorage.getItem("validationError")}
+          //"Custom error message goes here."
           onClose={handleClosePopup}
         />
       )}
