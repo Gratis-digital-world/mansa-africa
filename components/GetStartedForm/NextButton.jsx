@@ -4,16 +4,17 @@ import PopupError from "../GetStartedForm/PopupError";
 
 function NextButton({ caption }) {
   //================================
-  const theError = sessionStorage.getItem("validationError");
+  // const theError = sessionStorage.getItem("validationError");
 
   const [isPopupVisible, setPopupVisible] = useState(false);
 
   const handleShowPopup = () => {
-    if (sessionStorage.getItem("validationError") !== "") setPopupVisible(true);
+    // if (sessionStorage.getItem("validationError") !== "") setPopupVisible(true);
+    setPopupVisible(true);
   };
 
   const handleClosePopup = () => {
-    sessionStorage.setItem("validationError", "");
+    // sessionStorage.setItem("validationError", "");
     setPopupVisible(false);
   };
 
@@ -25,7 +26,7 @@ function NextButton({ caption }) {
         data-next
         className="bg-[#010DFF] rounded-lg text-white  w-1/2 p-2 py-4 mt-6"
         type="button"
-        onClick={handleShowPopup}
+        // onClick={handleShowPopup}
       >
         {caption}
       </button>
