@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import RepImage from "@/public/images/doc-preview.png";
-import Pdf from "@/public/images/pdf.png";
-import Doc from "@/public/images/doc.jpeg";
+import Pdf from "@/public/images/pdfx.png";
+import Doc from "@/public/images/docx.png";
 
 function UploadFile({ image, input_id, file_type }) {
   const [file, setFile] = useState(null);

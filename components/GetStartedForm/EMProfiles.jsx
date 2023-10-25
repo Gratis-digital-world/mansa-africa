@@ -376,23 +376,24 @@ function EMProfiles() {
       {/* ++++++++++++++++++++++++++++++ */}
       <div
         id="stage3-err"
-        className="h-4 pt-2 flex items-center justify-center italic text-xs text-red-500"
+        className="hidden h-4 pt-2 flex items-center justify-center italic text-xs text-red-500"
       ></div>
       {/* ++++++++++++++++++++++++++++++ */}
 
-      <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
+      {/* <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
         <div className="px-8 w-full flex items-center justify-center gap-4">
           <PrevButton />
 
           <NextButton caption={"Submit"} />
-          {/* <button
-            data-next
-            className="bg-[#010DFF] rounded-lg text-white  w-1/2 p-2 py-4 mt-6"
-            // type="button"
-          > */}
-          {/* {caption} */}
-          {/* Submit
-          </button> */}
+        
+        </div>
+      </div> */}
+
+      <div className="text-base mt-4 w-full pb-4">
+        <div className=" px-8">
+          {/* <div className="px-8 w-full grid grid-cols-2 gap-4"> */}
+          <PrevButton />
+          <NextButton caption={"Submit"} />
         </div>
       </div>
     </div>

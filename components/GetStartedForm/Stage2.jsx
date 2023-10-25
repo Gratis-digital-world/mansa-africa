@@ -595,10 +595,18 @@ function Stage2() {
       ></div>
       {/* ++++++++++++++++++++++++++++++ */}
 
-      <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
+      {/* <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
         <div className="px-8 w-full flex items-center justify-center gap-4">
           <PrevButton />
 
+          <NextButton caption={"Next"} />
+        </div>
+      </div> */}
+
+      <div className="text-base mt-4 w-full pb-4">
+        <div className=" px-8">
+          {/* <div className="px-8 w-full grid grid-cols-2 gap-4"> */}
+          <PrevButton />
           <NextButton caption={"Next"} />
         </div>
       </div>

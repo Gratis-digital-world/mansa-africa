@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NextButton from "./NextButton";
+import Link from "next/link";
 
 function Stage41() {
   return (
@@ -82,7 +83,7 @@ function Stage41() {
       </div>
 
       <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
-        <div className="px-8 w-full flex items-center justify-center gap-4">
+        <div className="px-8 w-full text-center">
           <NextButton caption={"Next"} />
         </div>
       </div>
