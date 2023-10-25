@@ -351,8 +351,8 @@ const uploadDocuments = (upload_data) => {
   //   nextBtn[i].disabled = true;
   // }
 
-  nextBtn[nextBtn.length - 1].disabled = true;
-  nextBtn[nextBtn.length - 1].innerHTML = "Processing ...";
+  // nextBtn[nextBtn.length - 1].disabled = true;
+  // nextBtn[nextBtn.length - 1].innerHTML = "Processing ...";
   //  nextBtn[i].textContent = "processing ..."
   //********************** */
 
@@ -394,7 +394,7 @@ const uploadPart = (upload_data) => {
   var nextBtn = document.querySelectorAll("[id='nextButton']");
 
   // for (var i = 0; i < nextBtn.length; i++) {
-  nextBtn[nextBtn.length - 1].disabled = true;
+  // nextBtn[nextBtn.length - 1].disabled = true;
   //   nextBtn[i].disabled = true;
   // }
   // nextBtn[nextBtn.length - 1].innerHTML = "Processing ...";
@@ -412,7 +412,7 @@ const uploadPart = (upload_data) => {
       setTimeout(() => {
         // msg.innerHTML = "Done";
         // for (var i = 0; i < nextBtn.length; i++) {
-        nextBtn[nextBtn.length - 1].disabled = true;
+        // nextBtn[nextBtn.length - 1].disabled = true;
         //   nextBtn[i].disabled = false;
         // }
         // nextBtn[nextBtn.length - 1].disabled = false;
