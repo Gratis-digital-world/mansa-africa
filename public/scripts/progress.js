@@ -393,10 +393,10 @@ const uploadPart = (upload_data) => {
   //********************** */
   var nextBtn = document.querySelectorAll("[id='nextButton']");
 
-  for (var i = 0; i < nextBtn.length; i++) {
-    // nextBtn[nextBtn.length - 1].disabled = true;
-    nextBtn[i].disabled = true;
-  }
+  // for (var i = 0; i < nextBtn.length; i++) {
+  nextBtn[nextBtn.length - 1].disabled = true;
+  //   nextBtn[i].disabled = true;
+  // }
   // nextBtn[nextBtn.length - 1].innerHTML = "Processing ...";
   //********************** */
 
@@ -411,10 +411,10 @@ const uploadPart = (upload_data) => {
       //Clear displayed message
       setTimeout(() => {
         // msg.innerHTML = "Done";
-        for (var i = 0; i < nextBtn.length; i++) {
-          // nextBtn[nextBtn.length - 1].disabled = true;
-          nextBtn[i].disabled = false;
-        }
+        // for (var i = 0; i < nextBtn.length; i++) {
+        nextBtn[nextBtn.length - 1].disabled = true;
+        //   nextBtn[i].disabled = false;
+        // }
         // nextBtn[nextBtn.length - 1].disabled = false;
         // nextBtn[nextBtn.length - 1].innerHTML = "Done";
         // location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
