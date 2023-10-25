@@ -20,6 +20,21 @@ multiStepForm.addEventListener("click", (e) => {
 
   if (incrementor == null || incrementor == 0) return;
 
+  //Stage - 41
+  const c_firstname = document.getElementById("c_firstname").value.trim();
+  const c_lastname = document.getElementById("c_lastname").value.trim();
+  const c_phone_number = document.getElementById("c_phone_number").value.trim();
+  const c_email_address = document
+    .getElementById("c_email_address")
+    .value.trim();
+
+  const valStage41 = {
+    c_firstname,
+    c_lastname,
+    c_phone_number,
+    c_email_address,
+  };
+
   //Stage - 0
   const company_logo = document.getElementById("company_logo").value.trim();
   const cert_of_inc = document.getElementById("cert_of_inc").value.trim();
@@ -45,6 +60,10 @@ multiStepForm.addEventListener("click", (e) => {
     .getElementById("percentage_owned_1")
     .value.trim();
 
+  const dd = document.getElementById("dd").value.trim();
+  const mm = document.getElementById("mm").value.trim();
+  const yy = document.getElementById("yy").value.trim();
+
   const valStage1 = {
     firstname_1,
     lastname_1,
@@ -52,6 +71,9 @@ multiStepForm.addEventListener("click", (e) => {
     country_1,
     role_1,
     percentage_owned_1,
+    dd,
+    mm,
+    yy,
   };
 
   //Stage - 2
@@ -96,32 +118,33 @@ multiStepForm.addEventListener("click", (e) => {
     //if begins
     switch (currentStep) {
       case 0:
-        isValid = validate(valStage0);
+        isValid = validate(valStage41);
         break;
       case 1:
-        isValid = validate(valStage1);
+        isValid = validate(valStage0);
         break;
       case 2:
+        isValid = validate(valStage1);
+        break;
+      case 3:
         isValid = validate(valStage2);
 
         if (isValid == true) {
           //Submit form
           const rawdata = {
+            ...valStage41,
             ...valStage0,
             ...valStage1,
             ...valStage2,
           };
 
-          lastStage = 2;
+          lastStage = 3;
 
           // console.log(rawdata);
 
           const f_info = new FormData(multiStepForm);
 
-          // submitToExcelSheet(f_info);
-
-          // //First Make Sure upload is successful
-          // const upRes = uploadDocuments(f_info);
+          //First Make Sure upload is successful
           uploadDocuments(f_info);
 
           // location.replace(
@@ -135,9 +158,21 @@ multiStepForm.addEventListener("click", (e) => {
     }
   } //Close If
 
-  if ((isValid === true || incrementor == -1) && !(lastStage == 2)) {
+  // if ((isValid === true || incrementor == -1) && !(lastStage == 3)) {
+  //   currentStep += incrementor;
+  //   showCurrentStep();
+  // }
+
+  if (isValid === true || incrementor == -1) {
     currentStep += incrementor;
-    showCurrentStep();
+    if (incrementor == 1) {
+      const f_info = new FormData(multiStepForm);
+      // update form
+      uploadPart(f_info);
+    }
+    if (!(lastStage == 3)) {
+      showCurrentStep();
+    }
   }
 
   //================
@@ -170,6 +205,25 @@ const validate = (values) => {
       error = document.getElementById("stage1-err");
       validity = false;
 
+      if (!values.c_firstname) error.textContent = "Provide the first name !";
+      else if (!values.c_lastname)
+        error.textContent = "Provide the last name !";
+      else if (!values.c_phone_number)
+        error.textContent = "Provide the contact phone number !";
+      else if (!values.c_email_address)
+        error.textContent = "Provide the contact email address !";
+      else if (!regex.test(values.c_email_address))
+        error.textContent = "This is not a valid e-mail !";
+      else error.textContent = "";
+
+      if (error.textContent == "") validity = true;
+
+      break;
+
+    case 1:
+      error = document.getElementById("stage1-err");
+      validity = false;
+
       if (!values.company_logo)
         error.textContent = "The company logo is missing !";
       else if (!values.cert_of_inc)
@@ -185,9 +239,10 @@ const validate = (values) => {
 
       break;
 
-    case 1:
+    case 2:
       error = document.getElementById("stage2-err");
       validity = false;
+      let minYear = new Date().getFullYear() - 18;
 
       if (!values.firstname_1)
         error.textContent = "Provide a valid first name.";
@@ -201,13 +256,31 @@ const validate = (values) => {
         error.textContent = "Indicate role/designation at the company.";
       else if (!values.percentage_owned_1)
         error.textContent = "Specify percentage of the company owned.";
-      else error.textContent = "";
+      // else error.textContent = "";
+      // error = document.getElementById("dob_err");
+      //***************************** */
+      // let minYear = new Date().getFullYear() - 18;
+      else if (!values.dd) {
+        error.textContent = "Input a valid date !";
+        validity = false;
+      } else if (!values.mm) {
+        error.textContent = "Specify month of birth !";
+        validity = false;
+      } else if (!values.yy) {
+        error.textContent = "Specify year of birth !";
+        validity = false;
+      } else if (values.yy > minYear) {
+        error.textContent = "Applicant must be 18 years and above !";
+        validity = false;
+      } else {
+        error.textContent = "";
+      }
 
       if (error.textContent == "") validity = true;
 
       break;
 
-    case 2:
+    case 3:
       validity = false;
 
       error = document.getElementById("ubo-1-err");
@@ -264,64 +337,10 @@ const validate = (values) => {
   }
 
   sessionStorage.setItem("validationError", error.textContent);
+  error.textContent = "";
 
   return validity;
 };
-
-// const submitToExcelSheet = (data) => {
-//   //==========================
-//   const msg1 = document.getElementById("stage3-err");
-
-//   msg1.innerHTML = "Loading ... !";
-
-//   //Clear displayed message
-//   setTimeout(() => {
-//     msg1.innerHTML = "";
-//   }, 5000);
-//   //==========================
-
-//   //===========================
-//   const url =
-//     "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
-
-//   const msg = document.getElementById("stage3-err");
-
-//   fetch(url, {
-//     method: "POST",
-//     body: data,
-//   })
-//     .then(() => {
-//       //upload files
-//       uploadDocuments(data);
-//       //===================
-//       // //Set success message
-//       // msg.innerHTML = "Application completed !";
-
-//       // //Clear displayed message
-//       // setTimeout(() => {
-//       //   msg.innerHTML = "";
-//       // }, 5000);
-
-//       //Clear form
-//       // multiStepForm.reset();
-
-//       // location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
-//     })
-
-//     .catch((err) => {
-//       // console.log(error);
-
-//       //Set error message
-//       msg.innerHTML = err.message;
-
-//       //Clear displayed message
-//       setTimeout(() => {
-//         msg.innerHTML = "";
-//       }, 5000);
-//     });
-
-//   //===========================
-// };
 
 const uploadDocuments = (upload_data) => {
   const msg = document.getElementById("stage3-err");
@@ -338,7 +357,7 @@ const uploadDocuments = (upload_data) => {
   //********************** */
 
   //upload files
-  msg.innerHTML = "Loading ... !";
+  // msg.innerHTML = "Loading ... !";
 
   // const u_url="http://localhost:3001/upload2"
   const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
@@ -350,7 +369,7 @@ const uploadDocuments = (upload_data) => {
     .then((response) => {
       //Clear displayed message
       setTimeout(() => {
-        msg.innerHTML = "Done";
+        // msg.innerHTML = "Done";
 
         nextBtn[nextBtn.length - 1].disabled = false;
         nextBtn[nextBtn.length - 1].innerHTML = "Done";
@@ -361,6 +380,49 @@ const uploadDocuments = (upload_data) => {
     })
     .then((data) => {
       console.log("Works!");
+      // console.log(data);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+  //===================
+};
+
+const uploadPart = (upload_data) => {
+  // const msg = document.getElementById("stage3-err");
+  //********************** */
+  var nextBtn = document.querySelectorAll("[id='nextButton']");
+
+  for (var i = 0; i < nextBtn.length; i++) {
+    // nextBtn[nextBtn.length - 1].disabled = true;
+    nextBtn[i].disabled = true;
+  }
+  // nextBtn[nextBtn.length - 1].innerHTML = "Processing ...";
+  //********************** */
+
+  const u_url = "http://localhost:3001/upload2";
+  // const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
+
+  fetch(u_url, {
+    method: "POST",
+    body: upload_data,
+  })
+    .then((response) => {
+      //Clear displayed message
+      setTimeout(() => {
+        // msg.innerHTML = "Done";
+        for (var i = 0; i < nextBtn.length; i++) {
+          // nextBtn[nextBtn.length - 1].disabled = true;
+          nextBtn[i].disabled = false;
+        }
+        // nextBtn[nextBtn.length - 1].disabled = false;
+        // nextBtn[nextBtn.length - 1].innerHTML = "Done";
+        // location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
+      }, 500);
+      //==========================
+    })
+    .then((data) => {
+      console.log("Works in part!");
       // console.log(data);
     })
     .catch((e) => {

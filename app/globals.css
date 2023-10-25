@@ -179,19 +179,20 @@ select {
 .popup-content {
   background-color: #fefefe;
   border: 1px solid #888;
-  width: 300px;
-  padding: 16px;
+  width: 400px;
+  /* padding: 10px; */
   text-align: center;
   /* border-radius: 20px; */
   border: 2px solid rgb(199, 189, 189);
-  padding: 10px;
-  border-radius: 25px;
+
+  border-radius: 15px;
+  font-size: 13px;
 }
 
 .close {
-  color: #aaa;
+  color: #4b5563;
   float: right;
-  font-size: 20px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
 }

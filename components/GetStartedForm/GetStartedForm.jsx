@@ -3,58 +3,21 @@ import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import Script from "next/script";
 
+import Stage41 from "../GetStartedForm/Stage41";
 import Stage1 from "../GetStartedForm/Stage1";
 import Stage2 from "../GetStartedForm/Stage2";
 import Stage3 from "../GetStartedForm/Stage3";
-// import PopupTest from "../GetStartedForm/PopupTest";
-// import PopupError from "../GetStartedForm/PopupError";
-// {isPopupVisible && (
-//   <PopupError
-//     message="Custom error message goes here."
-//     onClose={handleClosePopup}
-//   />
-// )}
 
 function GetStartedForm() {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneno, setPhoneno] = useState("");
-
-  const [file, setFile] = useState(null);
-
-  //   //================================
-  //   const [isPopupVisible, setPopupVisible] = useState(false);
-
-  //   const handleShowPopup = () => {
-  //     setPopupVisible(true);
-  //   };
-
-  //   const handleClosePopup = () => {
-  //     setPopupVisible(false);
-  //   };
-
-  //   import PopupError from "../GetStartedForm/PopupError";
-  // {isPopupVisible && (
-  //   <PopupError
-  //     message="Custom error message goes here."
-  //     onClose={handleClosePopup}
-  //   />
-  // )}
-
-  //   //================================
-
-  function handleFile(e) {
-    setFile(e.target.files[0]);
-    console.log(e.target.files[0]);
-  }
+  const [firstname, setCFirstname] = useState("");
+  const [lastname, setCLastname] = useState("");
+  const [phoneno, setCPhoneno] = useState("");
+  const [email, setCEmail] = useState("");
 
   const uploadSingleFileM = () => {
     //upload files
     const dataSource = document.forms["mansa-form-main"];
     const data = new FormData(dataSource);
-
-    // data.append(`${input_id}`, e.target.files);
 
     const localUrl = "http://localhost:3001/upload";
 
@@ -76,11 +39,10 @@ function GetStartedForm() {
   };
 
   const clearForm = () => {
-    setFirstname("");
-    setLastname("");
-    setEmail("");
-    setPhoneno("");
-    setFile(null);
+    setCFirstname("");
+    setCLastname("");
+    setCEmail("");
+    setCPhoneno("");
   };
 
   const handleSubmit = (e) => {
@@ -141,7 +103,7 @@ function GetStartedForm() {
         <div className="text-center pb-8">
           <p className="font-semibold text-3xl text-center">Get Started</p>
           <p className="text-xs opacity-70 pt-2">
-            Provide all necessary information and documents to get started.
+            Power your small business with Mansa
           </p>
         </div>
 
@@ -155,6 +117,7 @@ function GetStartedForm() {
         >
           <div className="shadow-lg w-full rounded-lg border-[0.025rem]">
             {/* <div className="w-full m-[0.05rem] rounded-lg border-[0.025rem]"> */}
+            <Stage41 />
             <Stage1 />
             <Stage2 />
             <Stage3 />
