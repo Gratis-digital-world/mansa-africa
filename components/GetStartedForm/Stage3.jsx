@@ -3,6 +3,7 @@ import Image from "next/image";
 import AddCircle from "@/public/images/add-circle.png";
 import FormProgress3 from "../GetStartedForm/FormProgress3";
 import EMProfiles from "../GetStartedForm/EMProfiles";
+import Script from "next/script";
 
 function Stage3() {
   const [fname_1, setFname1] = useState();
@@ -31,7 +32,7 @@ function Stage3() {
   return (
     <div
       data-step
-      className="app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className=" app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       <FormProgress3 />
 
@@ -60,6 +61,18 @@ function Stage3() {
             <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal First Name </span>
             </div>
+            {/* ==================== */}
+            <Script
+              src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"
+              strategy="lazyOnload"
+            />
+            {/* <div class="button-wrapper">
+              <button class="confetti-button">Yay🎉</button>
+            </div> */}
+
+            {/* <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> */}
+
+            {/* ==================== */}
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
                 className="w-full"

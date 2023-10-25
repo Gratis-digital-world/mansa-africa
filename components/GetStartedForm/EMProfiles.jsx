@@ -242,7 +242,8 @@ function EMProfiles() {
             <span className="italic">
               (To customize on a letterheaded paper with your company&#39;s
               logo)
-            </span>
+            </span>{" "}
+            <span className="text-red-700">*</span>
           </p>
           <p className="text-xs text-[#0062E4]">
             First, download the sample, then upload the form when completed.
@@ -284,7 +285,8 @@ function EMProfiles() {
             <span className="font-semibold">MANSA Questionnaire for SMEs</span>{" "}
             <span className="italic">
               (download the attached document, complete, sign and upload)
-            </span>
+            </span>{" "}
+            <span className="text-red-700">*</span>
           </p>
           <p className="text-xs text-[#0062E4]">
             First, download the sample, then upload the form when completed.
@@ -321,7 +323,8 @@ function EMProfiles() {
             <span className="font-semibold">MANSA Contribution Agreement</span>{" "}
             <span className="italic">
               (download the attached document, sign and upload)
-            </span>
+            </span>{" "}
+            <span className="text-red-700">*</span>
           </p>
           <p className="text-xs text-[#0062E4]">
             First, download the sample, then upload the form when completed.

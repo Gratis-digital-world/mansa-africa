@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import PopupError from "../GetStartedForm/PopupError";
 
 function NextButton({ caption }) {
+  // window.scrollTo(0, 0);
   //================================
   // let theError = sessionStorage.getItem("validationError");
 
@@ -15,6 +16,7 @@ function NextButton({ caption }) {
 
   const handleClosePopup = () => {
     sessionStorage.setItem("validationError", "");
+    sessionStorage.setItem("labelError", "");
     setPopupVisible(false);
   };
 
@@ -22,11 +24,13 @@ function NextButton({ caption }) {
     // let theError = sessionStorage.getItem("validationError");
     // const theError =
     sessionStorage.getItem("validationError");
+    sessionStorage.getItem("labelError");
   }, []);
   //================================
 
   return (
     <>
+      {/* <a href="#topofform"> */}
       <button
         id="nextButton"
         data-next
@@ -40,6 +44,7 @@ function NextButton({ caption }) {
       {isPopupVisible && (
         <PopupError
           message={sessionStorage.getItem("validationError")}
+          label={sessionStorage.getItem("labelError")}
           //"Custom error message goes here."
           onClose={handleClosePopup}
         />

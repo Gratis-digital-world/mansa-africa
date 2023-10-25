@@ -345,7 +345,7 @@ function Stage2() {
                   max={100}
                   placeholder=""
                 />
-                <p className="absolute text-right pr-4">%</p>
+                <p className="absolute text-right lg:pr-4 pr-1">%</p>
               </div>
             </div>
           </div>
@@ -566,7 +566,7 @@ function Stage2() {
                     value={PODSPercentage2}
                     onChange={(e) => setPODSPercentage2(e.target.value)}
                   />
-                  <p className="absolute text-right pr-4">%</p>
+                  <p className="absolute text-right lg:pr-4 pr-1">%</p>
                 </div>
               </div>
             </div>

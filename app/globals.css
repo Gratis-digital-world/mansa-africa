@@ -169,17 +169,20 @@ select {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  /* align-items: center; */
+  vertical-align: text-top;
+  padding: 1%;
 }
 
 .popup-content {
   background-color: #fefefe;
   border: 1px solid #888;
   width: 400px;
+  height: 84px;
   /* padding: 10px; */
   text-align: center;
   /* border-radius: 20px; */

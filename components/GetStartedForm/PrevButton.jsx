@@ -1,6 +1,8 @@
 import React from "react";
 
 function PrevButton() {
+  // window.scrollTo(0, 0);
+
   return (
     <button
       type="button"

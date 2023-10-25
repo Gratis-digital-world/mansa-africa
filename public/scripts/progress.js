@@ -217,6 +217,7 @@ const validate = (values) => {
       else error.textContent = "";
 
       if (error.textContent == "") validity = true;
+      sessionStorage.setItem("labelError", "Contact person");
 
       break;
 
@@ -227,15 +228,16 @@ const validate = (values) => {
       if (!values.company_logo)
         error.textContent = "The company logo is missing !";
       else if (!values.cert_of_inc)
-        error.textContent = "Please provide the certificate of incorporation !";
+        error.textContent = "Certificate of incorporation is missing !";
       else if (!values.mou)
         error.textContent =
-          "Please provide the memorandum and articles of association !";
+          "Memorandum and articles of association is missing !";
       else if (!values.tax_cert)
         error.textContent = "Missing tax certificate !";
       else error.textContent = "";
 
       if (error.textContent == "") validity = true;
+      sessionStorage.setItem("labelError", "Company Info.");
 
       break;
 
@@ -277,6 +279,7 @@ const validate = (values) => {
       }
 
       if (error.textContent == "") validity = true;
+      sessionStorage.setItem("labelError", "Profiles");
 
       break;
 
@@ -330,6 +333,7 @@ const validate = (values) => {
       }
 
       if (error.textContent == "") validity = true;
+      sessionStorage.setItem("labelError", "UBOs / EMPs");
 
       break;
 

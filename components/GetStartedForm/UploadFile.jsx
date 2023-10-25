@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import RepImage from "@/public/images/doc-preview.png";
+import Pdf from "@/public/images/pdf.png";
+import Doc from "@/public/images/doc.jpeg";
 
 function UploadFile({ image, input_id, file_type }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
 
   let theBlob;
+  let docBlob;
+  let pdfBlob;
 
   fetch(RepImage.src)
     .then((response) => response.blob())
@@ -17,15 +21,43 @@ function UploadFile({ image, input_id, file_type }) {
       console.error("Error converting image to Blob:", error);
     });
 
+  fetch(Pdf.src)
+    .then((response) => response.blob())
+    .then((imageBlob) => {
+      pdfBlob = imageBlob;
+    });
+
+  fetch(Doc.src)
+    .then((response) => response.blob())
+    .then((imageBlob) => {
+      docBlob = imageBlob;
+    });
+
   const previewFile = (thefile) => {
     if (!thefile) return false;
 
     let tmp = [];
 
+    // if (thefile[0].type.startsWith("image")) {
+    //   for (let i = 0; i < thefile.length; i++) {
+    //     tmp.push(URL.createObjectURL(thefile[i]));
+    //   }
+    // } else {
+    //   tmp.push(URL.createObjectURL(theBlob));
+    // }
+
     if (thefile[0].type.startsWith("image")) {
       for (let i = 0; i < thefile.length; i++) {
         tmp.push(URL.createObjectURL(thefile[i]));
       }
+    } else if (thefile[0].type === "application/pdf") {
+      tmp.push(URL.createObjectURL(pdfBlob));
+    } else if (
+      thefile[0].type === "application/msword" ||
+      thefile[0].type ===
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ) {
+      tmp.push(URL.createObjectURL(docBlob));
     } else {
       tmp.push(URL.createObjectURL(theBlob));
     }
