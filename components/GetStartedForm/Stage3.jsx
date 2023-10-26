@@ -4,8 +4,22 @@ import AddCircle from "@/public/images/add-circle.png";
 import FormProgress3 from "../GetStartedForm/FormProgress3";
 import EMProfiles from "../GetStartedForm/EMProfiles";
 import Script from "next/script";
+import ConfettiTest from "@/components/ConfettiTest/ConfettiTest";
+import PopupForm from "./PopupForm";
+import UBOProfiles from "../GetStartedForm/UBOProfiles";
+// import styles from "../../app/globals.css";
 
 function Stage3() {
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  const handleShowPopup = () => {
+    setPopupVisible(true);
+  };
+
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
+
   const [fname_1, setFname1] = useState();
   const [lname_1, setLname1] = useState();
 
@@ -55,11 +69,13 @@ function Stage3() {
             <span className="text-xs opacity-70" id="ubo_1" name="ubo_1">
               {fname_1} {lname_1}
             </span>
+            {/* <ConfettiTest /> */}
           </div>
 
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal First Name </span>
+              <span className="text-red-700">*</span>
             </div>
             {/* ==================== */}
             <Script
@@ -89,6 +105,7 @@ function Stage3() {
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal Last Name </span>
+              <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
@@ -105,17 +122,24 @@ function Stage3() {
 
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Shares</span>
+              <span className="font-semibold">
+                Percentage owned in the company
+              </span>{" "}
+              <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <input
-                className="w-full"
-                type="text"
-                name="ubo_shares_1"
-                id="ubo_shares_1"
-                placeholder=""
-                required
-              />
+              <div className="items-center w-full justify-end flex">
+                <input
+                  className="w-full text-right pr-4"
+                  type="number"
+                  name="ubo_shares_1"
+                  id="ubo_shares_1"
+                  min={0}
+                  max={100}
+                  placeholder=""
+                />
+                <p className="absolute text-right lg:pr-4 pr-1">%</p>
+              </div>
             </div>
           </div>
 
@@ -131,17 +155,29 @@ function Stage3() {
           <button
             type="button"
             className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-            onClick={handleProfile}
+            // onClick={handleProfile}
+            onClick={handleShowPopup}
           >
             <div className="">
               <Image src={AddCircle.src} width={12} height={12} alt="" />
             </div>
             <div className="">Add another profile</div>
           </button>
+
+          {/* Load Profile form */}
+          {isPopupVisible && (
+            <PopupForm
+              formName={<UBOProfiles />}
+              formHeader={"UBO Profiles"}
+              onClose={handleClosePopup}
+            />
+          )}
+          {/* Stop profile form load */}
         </div>
       </div>
 
-      <div className="hidden pt-4s" id="profile-of-beneficial-2">
+      {/* ============================================= */}
+      {/* <div className="hidden pt-4s" id="profile-of-beneficial-2">
         <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 mb-4">
           <div className="pt-4 px-8 pb-3 w-full h-12">
             <span className="text-xs opacity-70" id="ubo_2" name="ubo_2">
@@ -183,33 +219,51 @@ function Stage3() {
 
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Shares</span>
+              <span className="font-semibold">
+                Percentage owned in the company
+              </span>
             </div>
             <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
-              <input
-                className="w-full"
-                type="text"
-                name="ubo_shares_2"
-                id="ubo_shares_2"
-                onChange={(e) => setShares2(e.target.value)}
-                placeholder=""
-              />
+              <div className="items-center w-full justify-end flex">
+                <input
+                  className="w-full text-right pr-4"
+                  type="number"
+                  name="ubo_shares_2"
+                  id="ubo_shares_2"
+                  min={0}
+                  max={100}
+                  placeholder=""
+                />
+                <p className="absolute text-right lg:pr-4 pr-1">%</p>
+              </div>
             </div>
           </div>
 
           <div className="remove-profile-3 text-sm border-t-[0.025rem] flex w-full py-2 pb-3">
-            <div className="lg:pl-8 pl-4">
+            <div className="lg:pl-8 pl-4" onClick={handleProfile}>
               <button
                 type="button"
-                className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-4"
-                onClick={handleProfile}
+                className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
               >
                 Remove profile
               </button>
             </div>
+
+            <div className="pl-4">
+              <button
+                type="button"
+                className="save-profile-3 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+                // onClick={handleMoreProfile}
+                onClick={(e) => alert("Save profile (Clear page for new)")}
+              >
+                Save Profile
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* ============================================= */}
+      {/* <PopupForm /> */}
 
       <EMProfiles />
     </div>

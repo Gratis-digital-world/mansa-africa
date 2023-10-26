@@ -84,10 +84,10 @@ function Stage1() {
       ></div>
       {/* ++++++++++++++++++++++++++++++ */}
 
-      <div className="text-base mt-4 w-full pb-4">
-        <div className=" px-8">
-          {/* <div className="px-8 w-full grid grid-cols-2 gap-4"> */}
+      <div className="text-base mt-4 border-t-[0.025rem] text-center justify-center flex w-full pb-4">
+        <div className="lg:flex gap-4 px-8 w-full">
           <PrevButton />
+
           <NextButton caption={"Next"} />
         </div>
       </div>

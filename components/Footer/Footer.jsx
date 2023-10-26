@@ -20,7 +20,7 @@ function Footer() {
               Egypt.
             </p>
 
-            <p>MansaAfrica@gmail.com</p>
+            <p>info@themansa.africa</p>
 
             <p>+234 000 0000 000</p>
           </div>

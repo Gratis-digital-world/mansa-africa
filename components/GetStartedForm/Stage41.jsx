@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NextButton from "./NextButton";
 import Link from "next/link";
+import CountryWithCode from "@/components/CountryWithCode/CountryWithCode";
 
 function Stage41() {
   return (
@@ -54,13 +55,15 @@ function Stage41() {
               <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <input
+              <CountryWithCode select_id={"c_phone_number"} />
+
+              {/* <input
                 className="w-full"
                 type="text"
                 name="c_phone_number"
                 id="c_phone_number"
                 placeholder=""
-              />
+              /> */}
             </div>
           </div>
 
@@ -82,8 +85,14 @@ function Stage41() {
         </div>
       </div>
 
-      <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
+      {/* <div className="text-base mt-4 border-t-[0.025rem] w-full pb-4">
         <div className="px-8 w-full text-center">
+          <NextButton caption={"Next"} />
+        </div>
+      </div> */}
+
+      <div className="text-base mt-4 border-t-[0.025rem] text-center justify-center flex w-full pb-4">
+        <div className="lg:flex gap-4 px-8 lg:w-1/2 w-full">
           <NextButton caption={"Next"} />
         </div>
       </div>

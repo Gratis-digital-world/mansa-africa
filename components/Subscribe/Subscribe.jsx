@@ -5,7 +5,7 @@ function Subscribe() {
   return (
     <div className="text-[#18181B] bg-[#F3D31D] text-[1.1rem] lg:px-12 px-2 pb-3">
       <div className="py-4">
-        <p className="text-3xl font-semibold">Subscribe now</p>
+        <p className="text-3xl font-semibold">Join Us</p>
 
         <p className="text-xs font-semibold">
           to access a wealth of knowledge and seize the opportunities that await

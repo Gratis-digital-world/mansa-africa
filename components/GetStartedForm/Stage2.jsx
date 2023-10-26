@@ -27,12 +27,12 @@ function Stage2() {
   const minYear = new Date().getFullYear() - 18;
   const maxYear = minYear + 200;
 
-  const [dob, setDob] = useState(adultMin);
+  const [dob, setDob] = useState();
   const [dDob, setDdob] = useState();
   const [mDob, setMdob] = useState();
   const [yDob, setYdob] = useState();
 
-  const [dob2, setDob2] = useState(adultMin);
+  const [dob2, setDob2] = useState();
   const [dDob2, setDdob2] = useState();
   const [mDob2, setMdob2] = useState();
   const [yDob2, setYdob2] = useState();
@@ -375,7 +375,6 @@ function Stage2() {
             <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
               <div className="lg:pl-8 pl-4 pt-4 w-full">
                 <span className="font-semibold">Role at the business </span>
-                <span className="text-red-700">*</span>
               </div>
               <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
                 <select
@@ -396,7 +395,6 @@ function Stage2() {
             <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
               <div className="lg:pl-8 pl-4 pt-4 w-full">
                 <span className="font-semibold">Legal First Name </span>
-                <span className="text-red-700">*</span>
               </div>
               <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
                 <input
@@ -414,7 +412,6 @@ function Stage2() {
             <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
               <div className="lg:pl-8 pl-4 pt-4 w-full">
                 <span className="font-semibold">Legal Last Name </span>
-                <span className="text-red-700">*</span>
               </div>
               <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
                 <input
@@ -450,7 +447,6 @@ function Stage2() {
             <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
               <div className="lg:pl-8 pl-4 pt-4 w-full">
                 <span className="font-semibold">Date of birth </span>
-                <span className="text-red-700">*</span>
               </div>
               <div className="xflex w-full pl-4 pt-4 items-end justify-end pr-4">
                 {/* //---------------------- */}
@@ -531,7 +527,6 @@ function Stage2() {
             <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
               <div className="lg:pl-8 pl-4 pt-4 w-full">
                 <span className="font-semibold">Country of origin </span>
-                <span className="text-red-700">*</span>
               </div>
               <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
                 <select
@@ -551,7 +546,6 @@ function Stage2() {
                 <span className="font-semibold">
                   Percentage owned in the company{" "}
                 </span>
-                <span className="text-red-700">*</span>
               </div>
               <div className="w-full pl-4 pt-4 items-end justify-end pr-4">
                 <div className="items-center justify-end flex">
@@ -571,7 +565,7 @@ function Stage2() {
               </div>
             </div>
 
-            <div
+            {/* <div
               className="text-sm border-t-[0.025rem] w-full flex py-2 xb-6"
               onClick={handleProfile}
             >
@@ -581,6 +575,28 @@ function Stage2() {
                   className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
                 >
                   Remove profile
+                </button>
+              </div>
+            </div> */}
+
+            <div className="text-sm border-t-[0.025rem] w-full flex py-2 xb-6">
+              <div className="lg:pl-8 pl-4" onClick={handleProfile}>
+                <button
+                  type="button"
+                  className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+                >
+                  Remove profile
+                </button>
+              </div>
+
+              <div className="pl-4">
+                <button
+                  type="button"
+                  className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+                  // onClick={handleMoreProfile}
+                  onClick={(e) => alert("Save profile (Clear page for new)")}
+                >
+                  Save Profile
                 </button>
               </div>
             </div>
@@ -603,10 +619,10 @@ function Stage2() {
         </div>
       </div> */}
 
-      <div className="text-base mt-4 w-full pb-4">
-        <div className=" px-8">
-          {/* <div className="px-8 w-full grid grid-cols-2 gap-4"> */}
+      <div className="text-base mt-4 border-t-[0.025rem] text-center justify-center flex w-full pb-4">
+        <div className="lg:flex gap-4 px-8 w-full">
           <PrevButton />
+
           <NextButton caption={"Next"} />
         </div>
       </div>

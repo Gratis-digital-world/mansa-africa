@@ -58,6 +58,7 @@ function EMProfiles() {
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal First Name </span>
+              <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
@@ -75,6 +76,7 @@ function EMProfiles() {
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
               <span className="font-semibold">Legal Last Name </span>
+              <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
@@ -91,7 +93,8 @@ function EMProfiles() {
 
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Bio</span>
+              <span className="font-semibold">Bio </span>
+              <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <textarea
@@ -108,7 +111,8 @@ function EMProfiles() {
 
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Upload resume</span>
+              <span className="font-semibold">Upload resume </span>
+              <span className="text-red-700">*</span>
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <UploadFile
@@ -217,7 +221,7 @@ function EMProfiles() {
             </div>
           </div>
 
-          <div className="remove-profile-emp-2 text-sm border-t-[0.025rem] flex w-full py-2 pb-3 hiddenc">
+          {/* <div className="remove-profile-emp-2 text-sm border-t-[0.025rem] flex w-full py-2 pb-3 hiddenc">
             <div className="lg:pl-8 pl-4">
               <button
                 type="button"
@@ -225,6 +229,28 @@ function EMProfiles() {
                 onClick={handleEMPProfile}
               >
                 Remove profile
+              </button>
+            </div>
+          </div> */}
+
+          <div className="remove-profile-emp-2 text-sm border-t-[0.025rem] flex w-full py-2 pb-3 hiddenc">
+            {" "}
+            <div className="lg:pl-8 pl-4" onClick={handleEMPProfile}>
+              <button
+                type="button"
+                className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+              >
+                Remove profile
+              </button>
+            </div>
+            <div className="pl-4">
+              <button
+                type="button"
+                className="save-profile-4 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+                // onClick={handleMoreProfile}
+                onClick={(e) => alert("Save profile (Clear page for new)")}
+              >
+                Save Profile
               </button>
             </div>
           </div>
@@ -389,13 +415,26 @@ function EMProfiles() {
         </div>
       </div> */}
 
-      <div className="text-base mt-4 w-full pb-4">
-        <div className=" px-8">
-          {/* <div className="px-8 w-full grid grid-cols-2 gap-4"> */}
+      <div className="text-base mt-4 border-t-[0.025rem] text-center justify-center flex w-full pb-4">
+        <div className="lg:flex gap-4 px-8 w-full">
           <PrevButton />
+
           <NextButton caption={"Submit"} />
         </div>
       </div>
+      {/* //========================== */}
+      <div class="button-container">
+        <button onclick="basic()" type="button">
+          Basic
+        </button>
+        <button onclick="randomDirection()" type="button">
+          Random direction
+        </button>
+        <button id="makeItRain" onclick="makeItRain()" type="button">
+          Make it rain
+        </button>
+      </div>
+      {/* //========================== */}
     </div>
   );
 }
