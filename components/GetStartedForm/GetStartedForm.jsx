@@ -109,19 +109,19 @@ function GetStartedForm() {
     setShowModal(true);
   };
 
-  const confirmLeave = () => {
-    setShowModal(false);
-    window.removeEventListener("beforeunload", handleBeforeUnload);
-    window.location.href = "/"; // Navigate to a different page or URL
-  };
+  // const confirmLeave = () => {
+  //   setShowModal(false);
+  //   window.removeEventListener("beforeunload", handleBeforeUnload);
+  //   window.location.href = "/"; // Navigate to a different page or URL
+  // };
 
-  const cancelLeave = () => {
-    setShowModal(false);
-    window.removeEventListener("beforeunload", handleBeforeUnload);
-  };
+  // const cancelLeave = () => {
+  //   setShowModal(false);
+  //   window.removeEventListener("beforeunload", handleBeforeUnload);
+  // };
 
   // Add an event listener for beforeunload
-  window.addEventListener("beforeunload", handleBeforeUnload);
+  // window.addEventListener("beforeunload", handleBeforeUnload);
 
   //-----------------------------------------
 
