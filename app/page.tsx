@@ -7,6 +7,7 @@ import Subscribe from "@/components/Subscribe/Subscribe";
 import Footer from "@/components/Footer/Footer";
 import WhyMansa from "@/components/WhyMansa/WhyMansa";
 import SliderContainer from "@/components/CDRepo/SliderContainer";
+// import SliderImages from "@/components/SliderImages";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <PowerMansa />
       <WhyMansa />
       <SliderContainer />
+      {/* <SliderImages /> */}
       <OurServices />
       <Community />
       <Subscribe />

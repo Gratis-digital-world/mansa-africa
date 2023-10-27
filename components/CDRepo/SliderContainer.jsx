@@ -12,17 +12,17 @@ import Slider from "react-slick";
 
 // function SliderContainer() {
 class SliderContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-  }
-  next() {
-    this.slider.slickNext();
-  }
-  previous() {
-    this.slider.slickPrev();
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.next = this.next.bind(this);
+  //   this.previous = this.previous.bind(this);
+  // }
+  // next() {
+  //   this.slider.slickNext();
+  // }
+  // previous() {
+  //   this.slider.slickPrev();
+  // }
 
   render() {
     const settings = {

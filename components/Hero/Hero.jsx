@@ -4,10 +4,13 @@ import Navbar from "@/components/Navbar/Navbar";
 import Map from "@/public/images/map.png";
 import Link from "next/link";
 
+import SliderImages from "@/components/SliderImages";
+
 function Hero() {
   return (
     // from-[#F3D31D]
-    <div className="bg-gradient-to-r from-[#FFFFFF] from-55% to-[#0062E4]">
+    // <div className="bg-gradient-to-r from-[#FFFFFF] from-55% to-[#0062E4]">
+    <div className="">
       <div className="lg:px-12 px-4 pt-4">
         <Navbar />
       </div>
@@ -33,16 +36,12 @@ function Hero() {
             </Link>
           </div>
         </div>
-        <div className="hidden lg:flex items-end justify-end w-full">
-          <img src={Map.src} className="object-fill" alt="world map" />
-          {/* <Image
-            className="object-fill"
-            src={Map.src}
-            alt={"world map"}
-            width={700}
-            height={300}
-          /> */}
+        <div className="hidden lg:block items-end justify-end">
+          <SliderImages />
         </div>
+        {/* <div className="hidden lg:flex items-end justify-end w-full"> */}
+        {/* <img src={Map4.src} className="object-fill" alt="world map" /> */}
+        {/* </div> */}
       </div>
     </div>
   );
