@@ -75,11 +75,13 @@ const ConfettiTest = () => {
   };
 
   return (
-    <div>
-      <button onClick={toggleConfetti}>
-        {showConfetti ? "Stop Confetti" : "Start Confetti"}
+    <div className="hiddenx">
+      <button id="confettiBtn" onClick={toggleConfetti} type="button">
+        {/* {showConfetti ? "Stop Confetti" : "Start Confetti"} */}
+        {showConfetti ? " " : " "}
       </button>
       {showConfetti && <Confetti />}
+      {/* ---------------- */}
     </div>
   );
 };

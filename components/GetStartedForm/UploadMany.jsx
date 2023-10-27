@@ -4,7 +4,7 @@ import RepImage from "@/public/images/doc-preview.png";
 import Pdf from "@/public/images/pdf.png";
 import Doc from "@/public/images/doc.png";
 
-function UploadFile({ image, input_id, file_type }) {
+function UploadMany({ image, input_id, file_type }) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
 
@@ -38,28 +38,20 @@ function UploadFile({ image, input_id, file_type }) {
 
     let tmp = [];
 
-    // if (thefile[0].type.startsWith("image")) {
-    //   for (let i = 0; i < thefile.length; i++) {
-    //     tmp.push(URL.createObjectURL(thefile[i]));
-    //   }
-    // } else {
-    //   tmp.push(URL.createObjectURL(theBlob));
-    // }
-
-    if (thefile[0].type.startsWith("image")) {
-      for (let i = 0; i < thefile.length; i++) {
+    for (let i = 0; i < thefile.length; i++) {
+      if (thefile[i].type.startsWith("image")) {
         tmp.push(URL.createObjectURL(thefile[i]));
+      } else if (thefile[i].type === "application/pdf") {
+        tmp.push(URL.createObjectURL(pdfBlob));
+      } else if (
+        thefile[0].type === "application/msword" ||
+        thefile[0].type ===
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      ) {
+        tmp.push(URL.createObjectURL(docBlob));
+      } else {
+        tmp.push(URL.createObjectURL(theBlob));
       }
-    } else if (thefile[0].type === "application/pdf") {
-      tmp.push(URL.createObjectURL(pdfBlob));
-    } else if (
-      thefile[0].type === "application/msword" ||
-      thefile[0].type ===
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    ) {
-      tmp.push(URL.createObjectURL(docBlob));
-    } else {
-      tmp.push(URL.createObjectURL(theBlob));
     }
 
     const objectUrls = tmp;
@@ -77,28 +69,8 @@ function UploadFile({ image, input_id, file_type }) {
     return true;
   };
 
-  const uploadSingleFile = () => {
-    //upload files
-    const dataSource = document.forms["mansa-form-main"];
-    const data = new FormData(dataSource);
-
-    // data.append(`${input_id}`, e.target.files);
-
-    fetch("http://localhost:3001/upload", {
-      method: "POST",
-      body: data,
-    })
-      .then(() => {
-        console.log("Success Upload!");
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-    //===================
-  };
-
   return (
-    <div>
+    <div className="flex">
       {/* --------------- */}
       <label htmlFor={`${input_id}`}>
         <Image
@@ -112,7 +84,7 @@ function UploadFile({ image, input_id, file_type }) {
       </label>
       <input
         hidden
-        // required
+        // multiple
         id={`${input_id}`}
         name={`${input_id}`}
         type="file"
@@ -132,7 +104,7 @@ function UploadFile({ image, input_id, file_type }) {
         preview.map((pic) => {
           return (
             <>
-              <UploadFile
+              <UploadMany
                 image={pic}
                 input_id={`${input_id}`}
                 file_type={`${file_type}`}
@@ -146,4 +118,4 @@ function UploadFile({ image, input_id, file_type }) {
   );
 }
 
-export default UploadFile;
+export default UploadMany;

@@ -2,12 +2,12 @@ import Image from "next/image";
 import React from "react";
 import CustomNavigator from "./CustomNavigator";
 
-function CDRepo() {
+function IDMaking() {
   return (
     <div className="rounded-2xl bg-[#EFEFEF] text-[#1B1D29]">
       <div className="cd-repo px-12 py-8">
         <div className="lg:grid grid-cols-2 gap-8">
-          <div class="main_container px-8 py-8 rounded-lg bg-[#ffffff] lg:mb-0 mb-6">
+          <div class="main_container px-8 py-8 rounded-lg bg-[#0062E4] text-white lg:mb-0 mb-6">
             <div className="">
               <p className="font-semibold text-lg pb-2">
                 Comprehensive Data Repository
@@ -26,7 +26,7 @@ function CDRepo() {
           </div>
 
           <div class="rounded-lg xbg-[#ffffff] w-full">
-            <img src="/images/ch1.png" className="object-contain" />
+            <img src="/images/ch3.png" className="object-contain" />
           </div>
         </div>
       </div>
@@ -34,4 +34,4 @@ function CDRepo() {
   );
 }
 
-export default CDRepo;
+export default IDMaking;

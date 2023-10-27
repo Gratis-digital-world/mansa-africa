@@ -5,7 +5,7 @@ import errImg from "@/public/images/error.png";
 const PopupError = ({ message, label, onClose }) => {
   return (
     <div className="popup">
-      <div className="popup-content">
+      <div className="popup-content shadow-xl">
         <span
           className="close border-l-[0.2rem] flex items-center justify-center w-16 h-20"
           onClick={onClose}
@@ -14,7 +14,10 @@ const PopupError = ({ message, label, onClose }) => {
           Close
         </span>
         <div className="flex p-2">
-          <Image src={errImg.src} height={20} width={20} alt={""} />
+          {/* <Image src={errImg.src} height={20} width={20} alt={""} /> */}
+          <div>
+            <img src={errImg.src} />
+          </div>
           {/* <p className="pl-4 font-semibold">Error</p> */}
           <p className="pl-4 font-semibold">{label}</p>
         </div>

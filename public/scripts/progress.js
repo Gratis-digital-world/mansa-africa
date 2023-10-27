@@ -143,10 +143,10 @@ multiStepForm.addEventListener("click", (e) => {
 
           // console.log(rawdata);
 
-          const f_info = new FormData(multiStepForm);
+          // const f_info = new FormData(multiStepForm);
 
-          //First Make Sure upload is successful
-          uploadDocuments(f_info);
+          // //First Make Sure upload is successful
+          // uploadDocuments(f_info);
 
           // location.replace(
           //   "/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm"
@@ -164,15 +164,36 @@ multiStepForm.addEventListener("click", (e) => {
   //   showCurrentStep();
   // }
 
+  // const f_info = new FormData(multiStepForm);
+
+  // if (isValid === true || incrementor == -1) {
+  //   currentStep += incrementor;
+  //   if (incrementor == 1) {
+  //     // update form
+  //     uploadPart(f_info);
+  //   }
+  //   if (!(lastStage == 3)) {
+  //     showCurrentStep();
+  //   }
+  // }
+
+  const f_info = new FormData(multiStepForm);
+  f_info.append("stage", currentStep);
+  f_info.append("ubo_id_key", c_email_address);
+  f_info.append("emp_id_key", c_email_address);
+  f_info.append("mem_id_key", c_email_address);
+  f_info.append("owner_id_key", c_email_address);
+
   if (isValid === true || incrementor == -1) {
     currentStep += incrementor;
-    if (incrementor == 1) {
-      const f_info = new FormData(multiStepForm);
+    if (incrementor == 1 && !(lastStage == 3)) {
       // update form
       uploadPart(f_info);
     }
     if (!(lastStage == 3)) {
       showCurrentStep();
+    } else {
+      uploadDocuments(f_info);
     }
   }
 
@@ -219,6 +240,8 @@ const validate = (values) => {
 
       if (error.textContent == "") validity = true;
       sessionStorage.setItem("labelError", "Contact person");
+
+      sessionStorage.setItem("app_email", values.c_email_address);
 
       break;
 
@@ -373,6 +396,10 @@ const uploadDocuments = (upload_data) => {
     body: upload_data,
   })
     .then((response) => {
+      // Get the button element by its ID
+      const confettiBtn = document.getElementById("confettiBtn");
+      confettiBtn.click();
+
       //Clear displayed message
       setTimeout(() => {
         // msg.innerHTML = "Done";
@@ -381,8 +408,12 @@ const uploadDocuments = (upload_data) => {
           nextBtn[nextBtn.length - 1].disabled = false;
           nextBtn[nextBtn.length - 1].innerHTML = "Submit";
         }
+        confettiBtn.click();
+      }, 5000);
+
+      setTimeout(() => {
         location.replace("/success?suc=1axaW68594wxfGfrP_8sudjejhb8934hsdnsm");
-      }, 500);
+      }, 3000);
       //==========================
     })
     .then((data) => {

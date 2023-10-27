@@ -69,7 +69,7 @@ function Stage3() {
             <span className="text-xs opacity-70" id="ubo_1" name="ubo_1">
               {fname_1} {lname_1}
             </span>
-            {/* <ConfettiTest /> */}
+            <ConfettiTest />
           </div>
 
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
@@ -77,18 +77,14 @@ function Stage3() {
               <span className="font-semibold">Legal First Name </span>
               <span className="text-red-700">*</span>
             </div>
+
             {/* ==================== */}
-            <Script
+            {/* <Script
               src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"
               strategy="lazyOnload"
-            />
-            {/* <div class="button-wrapper">
-              <button class="confetti-button">Yay🎉</button>
-            </div> */}
-
-            {/* <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> */}
-
+            /> */}
             {/* ==================== */}
+
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <input
                 className="w-full"

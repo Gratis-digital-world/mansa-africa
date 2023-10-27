@@ -14,6 +14,16 @@ function UBOProfiles() {
           </span>
         </div>
 
+        <input
+          className="w-full hidden"
+          type="text"
+          name="ubo_id_key"
+          id="ubo_id_key"
+          placeholder="jj@jj.com"
+          value={sessionStorage.getItem("app_email")}
+          onChange={(e) => setFname2(e.target.value)}
+        />
+
         <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
           <div className="lg:pl-8 pl-4 pt-4 w-full">
             <span className="font-semibold">Legal First name </span>
@@ -69,18 +79,6 @@ function UBOProfiles() {
         </div>
 
         <div className="close-profile text-sm border-t-[0.025rem] flex w-full py-2 pb-3">
-          {/* <div
-            className="lg:pl-8 pl-4"
-            //    onClick={handleProfile}
-          >
-            <button
-              type="button"
-              className="remove-profile bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
-            >
-              Remove profile
-            </button>
-          </div> */}
-
           <div className="pl-4">
             <button
               type="button"

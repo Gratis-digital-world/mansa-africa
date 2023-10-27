@@ -1,3 +1,4 @@
+"use client";
 import Hero from "@/components/Hero/Hero";
 import PowerMansa from "@/components/PowerMansa/PowerMansa";
 import OurServices from "@/components/OurServices/OurServices";
@@ -5,7 +6,7 @@ import Community from "@/components/Community/Community";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import Footer from "@/components/Footer/Footer";
 import WhyMansa from "@/components/WhyMansa/WhyMansa";
-import CDRepo from "@/components/CDRepo/CDRepo";
+import SliderContainer from "@/components/CDRepo/SliderContainer";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Hero />
       <PowerMansa />
       <WhyMansa />
-      {/* <CDRepo /> */}
+      <SliderContainer />
       <OurServices />
       <Community />
       <Subscribe />

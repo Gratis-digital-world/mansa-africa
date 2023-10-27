@@ -8,6 +8,8 @@ import Stage1 from "../GetStartedForm/Stage1";
 import Stage2 from "../GetStartedForm/Stage2";
 import Stage3 from "../GetStartedForm/Stage3";
 
+import ConfirmationModal from "./ConfirmationModal";
+
 function GetStartedForm() {
   const [firstname, setCFirstname] = useState("");
   const [lastname, setCLastname] = useState("");
@@ -97,6 +99,32 @@ function GetStartedForm() {
   //========================================
 
   //========================================
+
+  //-----------------------------------------
+  const [showModal, setShowModal] = useState(false);
+
+  const handleBeforeUnload = (e) => {
+    e.preventDefault();
+    e.returnValue = "";
+    setShowModal(true);
+  };
+
+  const confirmLeave = () => {
+    setShowModal(false);
+    window.removeEventListener("beforeunload", handleBeforeUnload);
+    window.location.href = "/"; // Navigate to a different page or URL
+  };
+
+  const cancelLeave = () => {
+    setShowModal(false);
+    window.removeEventListener("beforeunload", handleBeforeUnload);
+  };
+
+  // Add an event listener for beforeunload
+  window.addEventListener("beforeunload", handleBeforeUnload);
+
+  //-----------------------------------------
+
   return (
     <div className="bg-white">
       <div className="lg:px-12 px-4 pt-4">
@@ -109,6 +137,12 @@ function GetStartedForm() {
             Power your small business with Mansa
           </p>
         </div>
+
+        {/* <ConfirmationModal
+          showModal={showModal}
+          onClose={cancelLeave}
+          onConfirm={confirmLeave}
+        /> */}
 
         <Script src="/scripts/progress.js" strategy="lazyOnload" />
         <a id="topofform"></a>

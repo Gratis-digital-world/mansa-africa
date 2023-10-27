@@ -7,8 +7,21 @@ import Uploading from "@/public/images/uploading.png";
 import UploadFile from "./UploadFile";
 import NextButton from "./NextButton";
 import PrevButton from "./PrevButton";
+import UploadMany from "./UploadMany";
+import PopupForm from "./PopupForm";
+import EMPProfiles from "../GetStartedForm/EMPProfiles";
 
 function EMProfiles() {
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  const handleShowPopup = () => {
+    setPopupVisible(true);
+  };
+
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
+
   const [emp_fname_1, setEMPFname1] = useState();
   const [emp_lname_1, setEMPLname1] = useState();
 
@@ -137,13 +150,24 @@ function EMProfiles() {
           <button
             type="button"
             className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-            onClick={handleEMPProfile}
+            // onClick={handleEMPProfile}
+            onClick={handleShowPopup}
           >
             <div className="">
               <Image src={AddCircle.src} width={12} height={12} alt="" />
             </div>
             <div className="">Add another profile</div>
           </button>
+
+          {/* Load EMP Profile form */}
+          {isPopupVisible && (
+            <PopupForm
+              formName={<EMPProfiles />}
+              formHeader={"EMP Profiles"}
+              onClose={handleClosePopup}
+            />
+          )}
+          {/* Stop EMP profile form load */}
         </div>
       </div>
 
@@ -388,7 +412,8 @@ function EMProfiles() {
           </p>
         </div>
         <div className="px-8 pt-2 w-full flex items-center gap-4">
-          <UploadFile
+          {/* <UploadFile */}
+          <UploadMany
             image={ClickToUpload.src}
             input_id={"asoc_mem_1"}
             file_type={
@@ -423,7 +448,7 @@ function EMProfiles() {
         </div>
       </div>
       {/* //========================== */}
-      <div class="button-container">
+      {/* <div class="button-container">
         <button onclick="basic()" type="button">
           Basic
         </button>
@@ -433,7 +458,7 @@ function EMProfiles() {
         <button id="makeItRain" onclick="makeItRain()" type="button">
           Make it rain
         </button>
-      </div>
+      </div> */}
       {/* //========================== */}
     </div>
   );
