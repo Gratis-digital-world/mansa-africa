@@ -1,14 +1,23 @@
 // import { useState } from "react";
 import Image from "next/image";
 import errImg from "@/public/images/error.png";
+import { useEffect } from "react";
 
 const PopupError = ({ message, label, onClose }) => {
+  useEffect(() => {
+    const idp = document.getElementById("popup_id");
+    setTimeout(() => {
+      idp.click();
+    }, 6000);
+  });
+
   return (
     <div className="popup">
       <div className="popup-content shadow-xl">
         <span
           className="close border-l-[0.2rem] flex items-center justify-center w-16 h-20"
           onClick={onClose}
+          id="popup_id"
         >
           {/* &times; */}
           Close

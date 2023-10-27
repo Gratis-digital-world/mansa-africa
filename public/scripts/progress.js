@@ -227,11 +227,17 @@ const validate = (values) => {
       error = document.getElementById("stage1-err");
       validity = false;
 
+      // const phonePattern = /^\d{10}$/;
+      const phonePattern =
+        /^\d{10}$|^\d{3}[-\s]\d{3}[-\s]\d{4}$|^\(\d{3}\)[-\s]\d{3}[-\s]\d{4}$/;
+
       if (!values.c_firstname) error.textContent = "Provide the first name !";
       else if (!values.c_lastname)
         error.textContent = "Provide the last name !";
       else if (!values.c_phone_number)
         error.textContent = "Provide the contact phone number !";
+      else if (!phonePattern.test(values.c_phone_number))
+        error.textContent = "Invalid phone number !";
       else if (!values.c_email_address)
         error.textContent = "Provide the contact email address !";
       else if (!regex.test(values.c_email_address))

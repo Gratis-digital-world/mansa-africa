@@ -25,7 +25,7 @@ function CountryWithCode({ select_id }) {
           name={select_id}
           id={select_id}
           placeholder=""
-          maxLength={11}
+          // maxLength={10}
           onChange={() => {
             setCCode(document.getElementById("c_code").value);
           }}

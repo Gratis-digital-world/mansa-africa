@@ -56,14 +56,6 @@ function Stage41() {
             </div>
             <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
               <CountryWithCode select_id={"c_phone_number"} />
-
-              {/* <input
-                className="w-full"
-                type="text"
-                name="c_phone_number"
-                id="c_phone_number"
-                placeholder=""
-              /> */}
             </div>
           </div>
 
