@@ -9,9 +9,25 @@ import NextButton from "./NextButton";
 import PrevButton from "./PrevButton";
 import UploadMany from "./UploadMany";
 import PopupForm from "./PopupForm";
-import EMPProfiles from "../GetStartedForm/EMPProfiles";
+import EMPProfile from "../GetStartedForm/EMPProfile";
 
 function EMProfiles() {
+  const [components, setComponents] = useState([]);
+  const [nextComponentId, setNextComponentId] = useState(1);
+
+  const addComponent = () => {
+    const newComponent = { id: nextComponentId };
+    setComponents([...components, newComponent]);
+    setNextComponentId(nextComponentId + 1);
+  };
+
+  const removeComponent = (id) => {
+    const updatedComponents = components.filter(
+      (component) => component.id !== id
+    );
+    setComponents(updatedComponents);
+  };
+
   const [isPopupVisible, setPopupVisible] = useState(false);
 
   const handleShowPopup = () => {
@@ -145,141 +161,33 @@ function EMProfiles() {
           ></div>
           {/* ++++++++++++++++++++++++++++++ */}
         </div>
-
-        <div className="pl-8 pb-4" id="another-profile-btn-emp-1">
-          <button
-            type="button"
-            className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-            // onClick={handleEMPProfile}
-            onClick={handleShowPopup}
-          >
-            <div className="">
-              <Image src={AddCircle.src} width={12} height={12} alt="" />
-            </div>
-            <div className="">Add another profile</div>
-          </button>
-
-          {/* Load EMP Profile form */}
-          {isPopupVisible && (
-            <PopupForm
-              formName={<EMPProfiles />}
-              formHeader={"EMP Profiles"}
-              onClose={handleClosePopup}
-            />
-          )}
-          {/* Stop EMP profile form load */}
-        </div>
       </div>
 
-      <div className="hidden emp-profile-2" id="emp-profile-2">
-        <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 pbb-4 mb-4">
-          <div className="pt-4 px-8 pb-3 w-full h-12">
-            <span className="text-xs opacity-70" id="emp_2" name="emp_2">
-              {emp_fname_2} {emp_lname_2}
-            </span>
-          </div>
-
-          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
-            <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Legal First Name </span>
-            </div>
-            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <input
-                className="w-full"
-                type="text"
-                name="emp_firstname_2"
-                id="emp_firstname_2"
-                placeholder=""
-                onChange={(e) => setEMPFname2(e.target.value)}
-                // required
-              />
-            </div>
-          </div>
-
-          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
-            <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Legal Last Name </span>
-            </div>
-            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <input
-                className="w-full"
-                type="text"
-                name="emp_lastname_2"
-                id="emp_lastname_2"
-                placeholder=""
-                onChange={(e) => setEMPLname2(e.target.value)}
-                // required
-              />
-            </div>
-          </div>
-
-          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
-            <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Bio</span>
-            </div>
-            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <textarea
-                className="w-full"
-                rows={3}
-                cols={50}
-                name="emp_bio_2"
-                id="emp_bio_2"
-                placeholder=""
-                // required
-              />
-            </div>
-          </div>
-
-          <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
-            <div className="lg:pl-8 pl-4 pt-4 w-full">
-              <span className="font-semibold">Upload resume</span>
-            </div>
-            <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
-              <UploadFile
-                image={ClickToUpload.src}
-                input_id={"emp_resume_2"}
-                file_type={
-                  "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                }
-              />
-            </div>
-          </div>
-
-          {/* <div className="remove-profile-emp-2 text-sm border-t-[0.025rem] flex w-full py-2 pb-3 hiddenc">
-            <div className="lg:pl-8 pl-4">
-              <button
-                type="button"
-                className="bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-4"
-                onClick={handleEMPProfile}
-              >
-                Remove profile
-              </button>
-            </div>
-          </div> */}
-
-          <div className="remove-profile-emp-2 text-sm border-t-[0.025rem] flex w-full py-2 pb-3 hiddenc">
-            {" "}
-            <div className="lg:pl-8 pl-4" onClick={handleEMPProfile}>
-              <button
-                type="button"
-                className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
-              >
-                Remove profile
-              </button>
-            </div>
-            <div className="pl-4">
-              <button
-                type="button"
-                className="save-profile-4 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
-                // onClick={handleMoreProfile}
-                onClick={(e) => alert("Save profile (Clear page for new)")}
-              >
-                Save Profile
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* === repeated component starts === */}
+      <div>
+        {components.map((component) => (
+          <EMPProfile
+            key={component.id}
+            pid={component.id}
+            onRemove={() => removeComponent(component.id)}
+          />
+        ))}
       </div>
+
+      {/* === repeated component ends === */}
+      <div className="lg:pl-8 pl-4 pb-2" id="another-profile-btn-2">
+        <button
+          type="button"
+          className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
+          onClick={addComponent}
+        >
+          <div className="">
+            <Image src={AddCircle.src} width={12} height={12} alt="" />
+          </div>
+          <div className="">Add another profile</div>
+        </button>
+      </div>
+      {/* </div> */}
       {/* ============================= */}
 
       <div className="text-sm border-t-[0.025rem] w-full lg:flex items-center pb-4">

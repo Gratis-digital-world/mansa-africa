@@ -6,10 +6,26 @@ import EMProfiles from "../GetStartedForm/EMProfiles";
 import Script from "next/script";
 import ConfettiTest from "@/components/ConfettiTest/ConfettiTest";
 import PopupForm from "./PopupForm";
-import UBOProfiles from "../GetStartedForm/UBOProfiles";
+import UBOProfile from "../GetStartedForm/UBOProfile";
 // import styles from "../../app/globals.css";
 
 function Stage3() {
+  const [components, setComponents] = useState([]);
+  const [nextComponentId, setNextComponentId] = useState(1);
+
+  const addComponent = () => {
+    const newComponent = { id: nextComponentId };
+    setComponents([...components, newComponent]);
+    setNextComponentId(nextComponentId + 1);
+  };
+
+  const removeComponent = (id) => {
+    const updatedComponents = components.filter(
+      (component) => component.id !== id
+    );
+    setComponents(updatedComponents);
+  };
+
   const [isPopupVisible, setPopupVisible] = useState(false);
 
   const handleShowPopup = () => {
@@ -46,7 +62,7 @@ function Stage3() {
   return (
     <div
       data-step
-      className=" app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className="active app-form w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       <FormProgress3 />
 
@@ -147,12 +163,27 @@ function Stage3() {
           {/* ++++++++++++++++++++++++++++++ */}
         </div>
 
+        {/* === repeated component starts === */}
+        <div>
+          {components.map((component) => (
+            <UBOProfile
+              key={component.id}
+              pid={component.id}
+              onRemove={() => removeComponent(component.id)}
+            />
+          ))}
+        </div>
+
+        {/* <ODSProfile /> */}
+        {/* === repeated component ends === */}
+
         <div className="pl-8 pb-4" id="another-profile-btn-3">
           <button
             type="button"
             className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
             // onClick={handleProfile}
-            onClick={handleShowPopup}
+            // onClick={handleShowPopup}
+            onClick={addComponent}
           >
             <div className="">
               <Image src={AddCircle.src} width={12} height={12} alt="" />
@@ -161,13 +192,13 @@ function Stage3() {
           </button>
 
           {/* Load Profile form */}
-          {isPopupVisible && (
+          {/* {isPopupVisible && (
             <PopupForm
               formName={<UBOProfiles />}
               formHeader={"UBO Profiles"}
               onClose={handleClosePopup}
             />
-          )}
+          )} */}
           {/* Stop profile form load */}
         </div>
       </div>

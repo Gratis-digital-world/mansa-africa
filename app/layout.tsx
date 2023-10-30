@@ -82,7 +82,7 @@ export default function RootLayout({
        */}
       {/* <body className={`${myFont.variable} font-myFont`}>{children}</body> */}
       {/* <body className={myFont.className}>{children}</body> */}
-      <body>{children}</body>
+      <body className="mycontainer">{children}</body>
     </html>
   );
 }

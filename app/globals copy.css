@@ -4,23 +4,14 @@
 
 @font-face {
   font-family: "EuclidCircularA";
-  src: url("../public/fonts/euclid/Euclid-Circular-A-Regular.ttf")
-    format("truetype");
-  font-style: normal;
-  font-weight: normal;
-  /* font-display: swap; */
-}
-
-/* @font-face {
-  font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Bold-Italic.ttf")
     format("truetype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-} */
+}
 
-/*@font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Bold.ttf")
     format("truetype");
@@ -36,7 +27,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-} */
+}
 
 /* @font-face {
   font-family: "EuclidCircularA";
@@ -74,7 +65,7 @@
   font-display: swap;
 } */
 
-/* @font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Regular.ttf")
     format("truetype");
@@ -99,7 +90,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-} */
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -115,14 +106,8 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .mycontainer {
-    max-width: 100%;
-  }
-}
-
 body {
-  font-family: "EuclidCircularA";
+  font-family: EuclidCircularA;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

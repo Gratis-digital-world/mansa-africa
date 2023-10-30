@@ -5,37 +5,37 @@ function UBOProfiles() {
   const [lname_2, setLname2] = useState();
   const [shares_2, setShares2] = useState();
 
-  const handleSaveUBO = () => {
-    const formId = document.getElementById("ubo-form");
-    const fdata = new FormData(formId);
+  // const handleSaveUBO = () => {
+  //   const formId = document.getElementById("ubo-form");
+  //   const fdata = new FormData(formId);
 
-    const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
-    // const u_url = "http://localhost:3001/upload2";
+  //   // const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
+  //   // const u_url = "http://localhost:3001/upload2";
 
-    fetch(u_url, {
-      method: "POST",
-      body: fdata,
-    })
-      .then((response) => {
-        console.log(response);
-        //Clear displayed message
-        //==========================
-        document.getElementById("ubo_message").textContent = "Saved !";
+  //   fetch(u_url, {
+  //     method: "POST",
+  //     body: fdata,
+  //   })
+  //     .then((response) => {
+  //       console.log(response);
+  //       //Clear displayed message
+  //       //==========================
+  //       document.getElementById("ubo_message").textContent = "Saved !";
 
-        setTimeout(() => {
-          document.getElementById("ubo_message").textContent = "";
-        }, 5000);
-      })
-      .then((data) => {
-        console.log("UBO Saved !");
-        setShares2("");
-        setFname2("");
-        setLname2("");
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
+  //       setTimeout(() => {
+  //         document.getElementById("ubo_message").textContent = "";
+  //       }, 5000);
+  //     })
+  //     .then((data) => {
+  //       console.log("UBO Saved !");
+  //       setShares2("");
+  //       setFname2("");
+  //       setLname2("");
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // };
 
   return (
     <div className="pt-4s" id="profile-of-beneficial-2">
@@ -47,7 +47,7 @@ function UBOProfiles() {
             </span>
           </div>
 
-          <div className="hidden">
+          {/* <div className="hidden">
             <input
               className="w-full xhidden z-0 h-0"
               type="text"
@@ -60,7 +60,7 @@ function UBOProfiles() {
                 setFname2(e.target.value);
               }}
             />
-          </div>
+          </div> */}
 
           <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
             <div className="lg:pl-8 pl-4 pt-4 w-full">
@@ -132,7 +132,7 @@ function UBOProfiles() {
                 className="save-profile-3 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
                 // onClick={handleMoreProfile}
                 // onClick={(e) => alert("Save profile (Clear page for new)")}
-                onClick={handleSaveUBO}
+                // onClick={handleSaveUBO}
               >
                 Save Profile
               </button>

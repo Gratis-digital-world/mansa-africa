@@ -23,62 +23,62 @@ function GetStatedForm() {
     setFile(null);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // alert("Application completed !");
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // alert("Application completed !");
 
-    const dataSource = document.forms["submit-to-spreadsheet"];
+  //   const dataSource = document.forms["submit-to-spreadsheet"];
 
-    const formdata = new FormData(dataSource);
+  //   const formdata = new FormData(dataSource);
 
-    formdata.append("file", file);
-    // console.log(formdata);
+  //   formdata.append("file", file);
+  //   // console.log(formdata);
 
-    const url =
-      "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
+  //   const url =
+  //     "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
 
-    const msg = document.getElementById("msg");
+  //   const msg = document.getElementById("msg");
 
-    fetch(url, {
-      method: "POST",
-      body: formdata,
-      // headers: {
-      //   "Custom-Header": "value",
-      // },
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Bad Response !");
-        }
-        //Set success message
-        msg.innerHTML = "Application completed !";
+  //   fetch(url, {
+  //     method: "POST",
+  //     body: formdata,
+  //     // headers: {
+  //     //   "Custom-Header": "value",
+  //     // },
+  //   })
+  //     .then((res) => {
+  //       if (!res.ok) {
+  //         throw new Error("Bad Response !");
+  //       }
+  //       //Set success message
+  //       msg.innerHTML = "Application completed !";
 
-        //Clear displayed message
-        setTimeout(() => {
-          msg.innerHTML = "";
-        }, 5000);
+  //       //Clear displayed message
+  //       setTimeout(() => {
+  //         msg.innerHTML = "";
+  //       }, 5000);
 
-        //Clear form
-        clearForm();
-        dataSource.reset();
+  //       //Clear form
+  //       clearForm();
+  //       dataSource.reset();
 
-        return res.json();
-      })
-      .then((data) => console.log(data))
-      .catch((error) => {
-        //Set error message
-        msg.innerHTML = error.message;
+  //       return res.json();
+  //     })
+  //     .then((data) => console.log(data))
+  //     .catch((error) => {
+  //       //Set error message
+  //       msg.innerHTML = error.message;
 
-        //Clear displayed message
-        setTimeout(() => {
-          msg.innerHTML = "";
-        }, 5000);
+  //       //Clear displayed message
+  //       setTimeout(() => {
+  //         msg.innerHTML = "";
+  //       }, 5000);
 
-        //  //Clear form
-        //  clearForm();
-        //  dataSource.reset();
-      });
-  };
+  //       //  //Clear form
+  //       //  clearForm();
+  //       //  dataSource.reset();
+  //     });
+  // };
 
   return (
     <div className="bg-gradient-to-r from-[#FFFFFF] from-55% to-[#0062E4]">
@@ -91,7 +91,7 @@ function GetStatedForm() {
           <form
             className="gsform w-full"
             name="submit-to-spreadsheet"
-            onSubmit={(e) => handleSubmit(e)}
+            // onSubmit={(e) => handleSubmit(e)}
           >
             <div className="flex-1 py-4">
               <input
