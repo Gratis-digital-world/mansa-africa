@@ -1,7 +1,7 @@
 import React from "react";
 import BlueSlant from "@/public/images/blue-slant.png";
 import YellowSlant from "@/public/images/yellow-slant.png";
-//
+
 function OurServices() {
   return (
     <div className="text-[#18181B] bg-white text-[1.1rem] px-12">
