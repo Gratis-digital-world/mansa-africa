@@ -10,7 +10,7 @@ function MInsights() {
           <div class="main_container px-8 py-8 rounded-lg bg-[#ffffff] lg:mb-0 mb-6">
             <div className="">
               <p className="font-semibold text-lg pb-2">Market Insights</p>
-              <p className="opacity-60 text-sm leading-6">
+              <p className="opacity-60 text-base leading-6">
                 Understanding market trends and dynamics is essential for
                 staying competitive. Mansa Africa&#39;s intelligence provides
                 real-time insights into African markets, helping businesses
@@ -18,7 +18,7 @@ function MInsights() {
               </p>
             </div>
 
-            <CustomNavigator />
+            {/* <CustomNavigator /> */}
           </div>
 
           <div class="rounded-lg xbg-[#ffffff] w-full">

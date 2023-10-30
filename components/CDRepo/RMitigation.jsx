@@ -10,7 +10,7 @@ function RMitigation() {
           <div class="main_container px-8 py-8 rounded-lg bg-[#F3D31D] lg:mb-0 mb-6">
             <div className="">
               <p className="font-semibold text-lg pb-2">Risk Mitigation</p>
-              <p className="opacity-60 text-sm leading-6">
+              <p className="opacity-60 text-base leading-6">
                 For investors seeking opportunities in the African market,
                 mitigating risks is paramount. Mansa Africa&#39;s data-driven
                 due diligence process helps investors assess the risks
@@ -19,7 +19,7 @@ function RMitigation() {
               </p>
             </div>
 
-            <CustomNavigator />
+            {/* <CustomNavigator /> */}
           </div>
 
           <div class="rounded-lg xbg-[#ffffff] w-full">

@@ -40,7 +40,7 @@ function EMPProfile({ pid, onRemove }) {
   };
 
   return (
-    <div className="emp-profile-2" id={`"emp-profile-no-${pid}`}>
+    <div className="emp-profile-3" id={`emp-profile-no-${pid}`}>
       <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 pbb-4 mb-4">
         <div className="pt-4 px-8 pb-3 w-full h-12">
           <span className="text-xs opacity-70" id="emp_2" name="emp_2">
@@ -56,10 +56,10 @@ function EMPProfile({ pid, onRemove }) {
             id="emp_id_key"
             placeholder="jj@jj.com"
             value={sessionStorage.getItem("app_email")}
-            onChange={(e) => {
-              e.target.value;
-              setEMPFname2(e.target.value);
-            }}
+            // onChange={(e) => {
+            //   e.target.value;
+            //   setEMPFname2(e.target.value);
+            // }}
           />
         </div>
 
@@ -111,8 +111,8 @@ function EMPProfile({ pid, onRemove }) {
               name="emp_bio_2"
               id="emp_bio_2"
               placeholder=""
-              value={emp_lname_2}
-              onChange={(e) => setEMPLname2(e.target.value)}
+              // value={emp_lname_2}
+              // onChange={(e) => setEMPLname2(e.target.value)}
               // required
             />
           </div>

@@ -20,7 +20,7 @@
   font-display: swap;
 } */
 
-/*@font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Bold.ttf")
     format("truetype");
@@ -36,45 +36,45 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-} */
+}
 
-/* @font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Light-Italic.ttf")
     format("truetype");
   font-style: italic;
   font-weight: lighter;
   font-display: swap;
-} */
+}
 
-/* @font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Light.ttf")
     format("truetype");
   font-style: normal;
   font-weight: lighter;
   font-display: swap;
-} */
+}
 
-/* @font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Medium-Italic.ttf")
     format("truetype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-} */
+}
 
-/* @font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Medium.ttf")
     format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-} */
+}
 
-/* @font-face {
+@font-face {
   font-family: "EuclidCircularA";
   src: url("../public/fonts/euclid/Euclid-Circular-A-Regular.ttf")
     format("truetype");
@@ -99,7 +99,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-} */
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -290,7 +290,35 @@ select {
   border-radius: 5px; */
   position: absolute;
 
-  bottom: 20px;
-  right: 25px;
+  /* bottom: 20px;
+  right: 25px; */
   /* left: 0; */
+
+  bottom: 0;
+  right: 0;
+}
+
+.outer-div {
+  /* width: 200px;  */
+  /* Set the width and height as needed */
+  /* height: 200px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px; */
+  position: relative;
+}
+
+.inner-div {
+  width: 50%;
+  /* height: 50%; */
+  /* background-color: #3498db; */
+  /* border-radius: 50%;  */
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  /* top: 70%; */
+  /* left: 30%; */
+  right: -10%;
+  bottom: -12%;
+  transform: translate(-50%, -50%);
 }

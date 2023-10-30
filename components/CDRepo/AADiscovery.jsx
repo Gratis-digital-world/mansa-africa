@@ -12,7 +12,7 @@ function AADiscovery() {
               <p className="font-semibold text-lg pb-2">
                 Accessibility and Discoverability{" "}
               </p>
-              <p className="opacity-60 text-sm leading-6">
+              <p className="opacity-60 text-base leading-6">
                 For African SMEs, being discoverable is the first step towards
                 attracting investment. Mansa Africa provides a platform where
                 SMEs can showcase their potential to a global audience of
@@ -22,7 +22,7 @@ function AADiscovery() {
               </p>
             </div>
 
-            <CustomNavigator />
+            {/* <CustomNavigator /> */}
           </div>
 
           <div class="rounded-lg xbg-[#ffffff] w-full">

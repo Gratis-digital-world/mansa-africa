@@ -12,20 +12,20 @@ import PopupForm from "./PopupForm";
 import EMPProfile from "../GetStartedForm/EMPProfile";
 
 function EMProfiles() {
-  const [components, setComponents] = useState([]);
-  const [nextComponentId, setNextComponentId] = useState(1);
+  const [empComponents, setEMPComponents] = useState([]);
+  const [nextComponentId, setNextEMPComponentId] = useState(1);
 
-  const addComponent = () => {
+  const addEMPComponent = () => {
     const newComponent = { id: nextComponentId };
-    setComponents([...components, newComponent]);
-    setNextComponentId(nextComponentId + 1);
+    setEMPComponents([...empComponents, newComponent]);
+    setNextEMPComponentId(nextComponentId + 1);
   };
 
-  const removeComponent = (id) => {
-    const updatedComponents = components.filter(
-      (component) => component.id !== id
+  const removeEMPComponent = (id) => {
+    const updatedComponents = empComponents.filter(
+      (empComponent) => empComponent.id !== id
     );
-    setComponents(updatedComponents);
+    setEMPComponents(updatedComponents);
   };
 
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -41,20 +41,20 @@ function EMProfiles() {
   const [emp_fname_1, setEMPFname1] = useState();
   const [emp_lname_1, setEMPLname1] = useState();
 
-  const [emp_fname_2, setEMPFname2] = useState();
-  const [emp_lname_2, setEMPLname2] = useState();
+  // const [emp_fname_2, setEMPFname2] = useState();
+  // const [emp_lname_2, setEMPLname2] = useState();
 
-  const handleEMPProfile = () => {
-    var x = document.getElementById("emp-profile-2");
-    var y = document.getElementById("another-profile-btn-emp-1");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-      y.style.display = "block";
-    } else {
-      x.style.display = "block";
-      y.style.display = "none";
-    }
-  };
+  // const handleEMPProfile = () => {
+  //   var x = document.getElementById("emp-profile-2");
+  //   var y = document.getElementById("another-profile-btn-emp-1");
+  //   if (x.style.display === "block") {
+  //     x.style.display = "none";
+  //     y.style.display = "block";
+  //   } else {
+  //     x.style.display = "block";
+  //     y.style.display = "none";
+  //   }
+  // };
 
   return (
     <div className="profile-of-executive-mgt">
@@ -165,11 +165,11 @@ function EMProfiles() {
 
       {/* === repeated component starts === */}
       <div>
-        {components.map((component) => (
+        {empComponents.map((empComponent) => (
           <EMPProfile
-            key={component.id}
-            pid={component.id}
-            onRemove={() => removeComponent(component.id)}
+            key={empComponent.id}
+            pid={empComponent.id}
+            onRemove={() => removeEMPComponent(empComponent.id)}
           />
         ))}
       </div>
@@ -179,7 +179,7 @@ function EMProfiles() {
         <button
           type="button"
           className="bg-white shadow rounded-lg w-44 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
-          onClick={addComponent}
+          onClick={addEMPComponent}
         >
           <div className="">
             <Image src={AddCircle.src} width={12} height={12} alt="" />

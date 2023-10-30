@@ -12,7 +12,7 @@ function IDMaking() {
               <p className="font-semibold text-lg pb-2">
                 Comprehensive Data Repository
               </p>
-              <p className="opacity-60 text-sm leading-6">
+              <p className="opacity-60 text-base leading-6">
                 Mansa Africa has invested significant efforts in collecting,
                 organizing, and updating data related to African businesses,
                 industries, and market dynamics. This repository is a goldmine
@@ -22,7 +22,7 @@ function IDMaking() {
               </p>
             </div>
 
-            <CustomNavigator />
+            {/* <CustomNavigator /> */}
           </div>
 
           <div class="rounded-lg xbg-[#ffffff] w-full">
