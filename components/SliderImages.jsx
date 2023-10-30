@@ -34,6 +34,7 @@ class SliderImages extends Component {
       slidesToScroll: 1,
       autoplaySpeed: 500,
       fade: true,
+      arrows: false,
     };
 
     return (

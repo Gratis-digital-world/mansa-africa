@@ -34,6 +34,7 @@ class SliderContainer extends Component {
       slidesToScroll: 1,
       autoplaySpeed: 5000,
       fade: true,
+      arrows: false,
     };
 
     return (
