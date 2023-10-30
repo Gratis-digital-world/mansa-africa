@@ -115,11 +115,12 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .mycontainer {
-    max-width: 100%;
+    width: "1200px";
+    margin: 0 auto;
   }
-}
+} */
 
 body {
   font-family: "EuclidCircularA";

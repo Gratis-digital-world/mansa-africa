@@ -28,11 +28,11 @@ class SliderImages extends Component {
     const settings = {
       dots: false,
       infinite: true,
-      speed: 1000,
+      speed: 500,
       autoplay: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 500,
       fade: true,
     };
 
