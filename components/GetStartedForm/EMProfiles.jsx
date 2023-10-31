@@ -10,6 +10,7 @@ import PrevButton from "./PrevButton";
 import UploadMany from "./UploadMany";
 import PopupForm from "./PopupForm";
 import EMPProfile from "../GetStartedForm/EMPProfile";
+import MemProfile from "../GetStartedForm/MemProfile";
 
 function EMProfiles() {
   const [empComponents, setEMPComponents] = useState([]);
@@ -26,6 +27,23 @@ function EMProfiles() {
       (empComponent) => empComponent.id !== id
     );
     setEMPComponents(updatedComponents);
+  };
+
+  // ============================
+  const [memComponents, setMemComponents] = useState([]);
+  const [nextMemComponentId, setNextMemComponentId] = useState(1);
+
+  const addMemComponent = () => {
+    const newMemComponent = { id: nextMemComponentId };
+    setMemComponents([...memComponents, newMemComponent]);
+    setNextMemComponentId(nextMemComponentId + 1);
+  };
+
+  const removeMemComponent = (id) => {
+    const updatedMemComponents = memComponents.filter(
+      (memComponent) => memComponent.id !== id
+    );
+    setMemComponents(updatedMemComponents);
   };
 
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -314,16 +332,43 @@ function EMProfiles() {
           </p>
         </div>
         <div className="px-8 pt-2 w-full flex items-center gap-4">
-          {/* <UploadFile */}
-          <UploadMany
+          <UploadFile
             image={ClickToUpload.src}
             input_id={"asoc_mem_1"}
             file_type={
               "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
-            morefiles="multiple"
           />
         </div>
+
+        {/* === repeated component starts === */}
+        <div className="grid grid-cols-5">
+          {memComponents.map((memComponent) => (
+            <MemProfile
+              key={memComponent.id}
+              pid={memComponent.id}
+              onRemove={() => removeMemComponent(memComponent.id)}
+            />
+          ))}
+        </div>
+
+        {/* === repeated component ends === */}
+
+        {/* ================= assoc members ============== */}
+        <div className="lg:pl-8 pl-4 pb-2" id="another-membership-btn">
+          <button
+            type="button"
+            className="bg-white shadow rounded-lg w-20 text-xs p-2 py-2 mt-4 flex items-center justify-center gap-1"
+            onClick={addMemComponent}
+          >
+            <div className="">
+              <Image src={AddCircle.src} width={12} height={12} alt="" />
+            </div>
+            <div className="">More</div>
+          </button>
+        </div>
+        {/* ================= assoc members ============== */}
+        {/* ============================= */}
       </div>
 
       {/* ++++++++++++++++++++++++++++++ */}
