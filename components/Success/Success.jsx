@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import ConfettiTest from "@/components/ConfettiTest/ConfettiTest";
 
 function Success() {
+  useEffect(() => {
+    const confettiBtn = document.getElementById("confettiBtn");
+    confettiBtn.click();
+
+    setTimeout(() => {
+      location.replace("/");
+    }, 5000);
+  });
+
   return (
     <div className="text-[#18181B] bg-white text-[1.1rem] px-12 pt-8 flex items-center justify-center w-screen h-screen">
       <div className="text-center">
@@ -18,6 +28,7 @@ function Success() {
           </Link>
         </div>
       </div>
+      <ConfettiTest />
     </div>
   );
 }
