@@ -10,9 +10,9 @@ function Success() {
           Congratulations on taking the first step to unlocking your SMEs
           potential with Mansa Africa!
         </div>
-        <div>
+        <div className="">
           <Link href={"/"}>
-            <button className="bg-[#010DFF] text-white h-12 rounded-lg w-2/5">
+            <button className="bg-[#010DFF] text-white h-12 rounded-lg lg:w-2/5 px-3">
               Back to homepage
             </button>
           </Link>

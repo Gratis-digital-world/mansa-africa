@@ -40,12 +40,9 @@ export default function Home() {
     <div className="h-screen text-[#18181B] bg-white text-[1.1rem]">
       <Hero />
       <PowerMansa />
-      {/* <div> */}
       <hr className="pb-8" />
-      {/* </div> */}
       <WhyMansa />
       <SliderContainer />
-      {/* <SliderImages /> */}
       <OurServices />
       <Community />
       <Subscribe />
