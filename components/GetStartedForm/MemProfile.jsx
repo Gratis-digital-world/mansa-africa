@@ -4,7 +4,7 @@ import ClickToUpload from "@/public/images/click-to-upload.png";
 
 function MemProfile({ pid, onRemove }) {
   return (
-    <div className="px-8 pt-2 w-full items-center gap-2">
+    <div className="px-8 pt-2 lg:w-full w-fit items-center gap-2">
       <UploadFile
         image={ClickToUpload.src}
         input_id={`asoc_mem_2_${pid}`}

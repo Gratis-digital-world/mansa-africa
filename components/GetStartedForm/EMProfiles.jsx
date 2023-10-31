@@ -342,7 +342,7 @@ function EMProfiles() {
         </div>
 
         {/* === repeated component starts === */}
-        <div className="grid grid-cols-5">
+        <div className="lg:grid grid-cols-5">
           {memComponents.map((memComponent) => (
             <MemProfile
               key={memComponent.id}

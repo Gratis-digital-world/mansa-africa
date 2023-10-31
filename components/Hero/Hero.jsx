@@ -16,7 +16,7 @@ function Hero() {
       </div>
       <div className="lg:grid lg:grid-cols-2">
         <div className="pl-4 lg:pl-12 py-8 lg:pr-0 pr-8">
-          <p className="lg:text-[3.625rem] text-[2.625rem] text-[#18181B] leading-none font-semibold pb-8">
+          <p className="lg:text-[3.625rem] text-[1.8rem] text-[#18181B] leading-none font-semibold pb-2 lg:pb-8">
             Empowering African Businesses with Data
           </p>
           <div className="text-[#52525B] leading-7">
