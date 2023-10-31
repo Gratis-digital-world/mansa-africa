@@ -210,6 +210,7 @@ multiStepForm.addEventListener("click", (e) => {
 });
 
 function showCurrentStep() {
+  sessionStorage.setItem("closepage", false);
   formSteps.forEach((step, index) => {
     step.classList.toggle("active", index === currentStep);
   });
@@ -402,6 +403,7 @@ const uploadDocuments = (upload_data) => {
     body: upload_data,
   })
     .then((response) => {
+      sessionStorage.setItem("closepage", true);
       // Get the button element by its ID
       const confettiBtn = document.getElementById("confettiBtn");
       confettiBtn.click();

@@ -4,12 +4,12 @@ import YellowSlant from "@/public/images/yellow-slant.png";
 
 function OurServices() {
   return (
-    <div className="text-[#18181B] bg-white text-[1.1rem] px-12">
+    <div className="text-[#18181B] bg-white text-[1.1rem] px-4 lg:px-12">
       <div className="text-[#0161E1] text-xl pb-4">OUR SERVICES</div>
       <div className="lg:grid grid-cols-2 gap-8 pb-8">
         <div className="rounded-2xl bg-[#1B222D] text-white lg:mb-0 mb-6">
-          <div className="px-12 pt-8">
-            <p className="pb-2 text-3xl font-semibold">
+          <div className="px-4 lg:px-12 pt-8">
+            <p className="pb-2 lg:text-3xl text-2xl font-semibold">
               Due Diligence Made Easy
             </p>
             <p className="text-base leading-6 opacity-70">
@@ -30,8 +30,8 @@ function OurServices() {
             <img src={YellowSlant.src} />
           </div>
 
-          <div className="px-12">
-            <p className="pb-2 text-3xl font-semibold">
+          <div className="px-4 lg:px-12">
+            <p className="pb-2 lg:text-3xl text-2xl font-semibold">
               Building Bridges to Investment
             </p>
             <p className="text-base leading-6 opacity-70 lg:pb-0 pb-6">

@@ -2,11 +2,11 @@ import React from "react";
 
 function Community() {
   return (
-    <div className="text-[#18181B] bg-white text-[1.1rem] px-12 pb-12">
+    <div className="text-[#18181B] bg-white text-[1.1rem] px-4 lg:px-12 pb-12">
       <div>
         <div className="rounded-2xl bg-[#1B222D] text-white">
-          <div className="px-12 py-8">
-            <p className="pb-2 text-3xl font-semibold">
+          <div className="px-4 lg:px-12 py-4 lg:py-8">
+            <p className="pb-2 lg:text-3xl text-2xl font-semibold">
               Want to be part of our <br />
               community?
             </p>

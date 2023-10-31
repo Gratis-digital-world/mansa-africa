@@ -3,16 +3,17 @@ import Navbar from "../Navbar/Navbar";
 
 function Terms() {
   return (
-    <div className="text-[#18181B] bg-white text-base xtext-[1.1rem] px-12 py-4 text-justify pb-40">
+    // <div className="text-[#18181B] bg-white text-base xtext-[1.1rem] px-12 py-4 text-justify pb-40">
+    <div className="text-[#18181B] bg-white text-base xtext-[1.1rem] px-4 lg:px-12 py-4 xtext-justify pb-12 lg:pb-40">
       <div>
         <Navbar />
       </div>
       <div>
-        <p className="text-[3rem] font-semibold py-6 pt-12">
+        <p className="text-[1.8rem] lg:text-[3rem] leading-tight font-semibold py-4 lg:py-6 pt-4 lg:pt-12">
           Terms and Conditions
         </p>
       </div>
-      <div className="leading-7 opacity-80">
+      <div className="leading-7 opacity-80 text-justify">
         <p className="pt-4">
           Please read these Terms and Conditions carefully before using our
           website, operated by MANSA Digital System. Your access to and use of

@@ -15,8 +15,8 @@ function Hero() {
         <Navbar />
       </div>
       <div className="lg:grid lg:grid-cols-2">
-        <div className="pl-12 py-8 lg:pr-0 pr-8">
-          <p className="text-[3.625rem] text-[#18181B] leading-none font-semibold pb-8">
+        <div className="pl-4 lg:pl-12 py-8 lg:pr-0 pr-8">
+          <p className="lg:text-[3.625rem] text-[2.625rem] text-[#18181B] leading-none font-semibold pb-8">
             Empowering African Businesses with Data
           </p>
           <div className="text-[#52525B] leading-7">

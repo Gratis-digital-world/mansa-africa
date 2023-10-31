@@ -5,9 +5,9 @@ import CustomNavigator from "./CustomNavigator";
 function AADiscovery() {
   return (
     <div className="rounded-2xl bg-[#EFEFEF] text-[#1B1D29]">
-      <div className="cd-repo px-12 py-8">
+      <div className="cd-repo px-4 lg:px-12 py-4 lg:py-8">
         <div className="lg:grid grid-cols-2 gap-8">
-          <div class="main_container px-8 py-8 rounded-lg bg-[#1B222D] text-white lg:mb-0 mb-6">
+          <div class="main_container lg:px-8 px-4 lg:py-8 py-4 rounded-lg bg-[#1B222D] text-white lg:mb-0 mb-6">
             <div className="">
               <p className="font-semibold text-lg pb-2">
                 Accessibility and Discoverability{" "}

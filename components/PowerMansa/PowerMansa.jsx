@@ -7,11 +7,11 @@ function PowerMansa() {
   return (
     // <div className="bg-white bg-cover blue-slant">
     <div className="text-[#18181B] bg-white text-[1.1rem] pb-4">
-      <div className="text-3xl font-semibold pb-4 pt-12 px-12">
+      <div className="text-3xl font-semibold pb-4 pt-4 lg:pt-12 px-4 lg:px-12">
         Discover the Power of MANSA Africa
       </div>
 
-      <div className="bg-cover bl-sln-div text-[1.1rem] px-12">
+      <div className="bg-cover bl-sln-div text-[1.1rem] px-4 lg:px-12">
         <div className="bg-white">
           <div className="lg:grid grid-cols-3 gap-8">
             <div className="bg-cover profile-1 shadow-lg rounded-lg px-4 mb-6">

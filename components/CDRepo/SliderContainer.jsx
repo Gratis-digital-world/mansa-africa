@@ -40,7 +40,7 @@ class SliderContainer extends Component {
     };
 
     return (
-      <div className="text-[#18181B] bg-white text-[1.1rem] px-12 pb-12">
+      <div className="text-[#18181B] bg-white text-[1.1rem] lg:px-12 px-4 lg:pb-12 xpb-4">
         <div className="rounded-2xl bg-[#EFEFEF] text-[#1B1D29] outer-div">
           <Slider ref={(c) => (this.slider = c)} {...settings}>
             <CDRepo />

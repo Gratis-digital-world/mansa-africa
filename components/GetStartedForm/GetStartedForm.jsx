@@ -16,30 +16,6 @@ function GetStartedForm() {
   const [phoneno, setCPhoneno] = useState("");
   const [email, setCEmail] = useState("");
 
-  // const uploadSingleFileM = () => {
-  //   //upload files
-  //   const dataSource = document.forms["mansa-form-main"];
-  //   const data = new FormData(dataSource);
-
-  //   const localUrl = "http://localhost:3001/upload";
-
-  //   // const liveUrl = "https://mansa-96a6c794c4b6.herokuapp.com/upload";
-
-  //   theUrl = localUrl;
-
-  //   fetch(theUrl, {
-  //     method: "POST",
-  //     body: data,
-  //   })
-  //     .then(() => {
-  //       console.log("Success Upload!");
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  //   //===================
-  // };
-
   const clearForm = () => {
     setCFirstname("");
     setCLastname("");
@@ -47,63 +23,11 @@ function GetStartedForm() {
     setCPhoneno("");
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const dataSource = document.forms["mansa-form-main"];
-
-  //   const data = new FormData(dataSource);
-  //   // data.append("file",)
-  //   // console.log(data);
-
-  //   const url =
-  //     "https://script.google.com/macros/s/AKfycbxmyF9NbwBVJKlY5nFyCWY_OMKrM249GMMvYG-J53nB4ryZvBoyOIdkuEwNS8bYqVml/exec";
-
-  //   const msg = document.getElementById("stage3-err");
-
-  //   fetch(url, {
-  //     method: "POST",
-  //     body: data,
-  //   })
-  //     .then(() => {
-  //       //upload files
-  //       uploadSingleFileM();
-  //       //===================
-
-  //       //Set success message
-  //       msg.innerHTML = "Application completed !";
-
-  //       //Clear displayed message
-  //       setTimeout(() => {
-  //         msg.innerHTML = "";
-  //       }, 5000);
-
-  //       //Clear form
-  //       clearForm();
-  //       dataSource.reset();
-  //     })
-
-  //     .catch((error) => {
-  //       // console.log(error);
-
-  //       //Set error message
-  //       msg.innerHTML = error.message;
-
-  //       //Clear displayed message
-  //       setTimeout(() => {
-  //         msg.innerHTML = "";
-  //       }, 5000);
-  //     });
-  // };
-
-  //========================================
-
-  //========================================
-
   //-----------------------------------------
   const [showModal, setShowModal] = useState(false);
 
   const handleBeforeUnload = (e) => {
+    // console.log(sessionStorage.getItem("closepage"));
     e.preventDefault();
     e.returnValue = "";
     setShowModal(true);
@@ -112,7 +36,7 @@ function GetStartedForm() {
   // const confirmLeave = () => {
   //   setShowModal(false);
   //   window.removeEventListener("beforeunload", handleBeforeUnload);
-  //   window.location.href = "/"; // Navigate to a different page or URL
+  //   window.location.href = "/";
   // };
 
   // const cancelLeave = () => {
@@ -120,10 +44,16 @@ function GetStartedForm() {
   //   window.removeEventListener("beforeunload", handleBeforeUnload);
   // };
 
-  // Add an event listener for beforeunload
   // window.addEventListener("beforeunload", handleBeforeUnload);
 
   //-----------------------------------------
+
+  useEffect(() => {
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <div className="bg-white">

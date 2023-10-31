@@ -5,9 +5,9 @@ import CustomNavigator from "./CustomNavigator";
 function CDRepo() {
   return (
     <div className="rounded-2xl bg-[#EFEFEF] text-[#1B1D29]">
-      <div className="cd-repo px-12 py-8">
+      <div className="cd-repo lg:px-12 px-4 lg:py-8 py-4">
         <div className="lg:grid grid-cols-2 gap-8">
-          <div class="main_container px-8 py-8 rounded-lg bg-[#ffffff] lg:mb-0 mb-6">
+          <div class="main_container lg:px-8 px-4 lg:py-8 py-4 rounded-lg bg-[#ffffff] lg:mb-0 mb-6">
             <div className="">
               <p className="font-semibold text-lg pb-2">
                 Comprehensive Data Repository

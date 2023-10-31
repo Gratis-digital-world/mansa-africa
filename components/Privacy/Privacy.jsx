@@ -3,12 +3,12 @@ import Navbar from "../Navbar/Navbar";
 
 function Privacy() {
   return (
-    <div className="text-[#18181B] bg-white text-base xtext-[1.1rem] px-12 py-4 text-justify pb-40">
+    <div className="text-[#18181B] bg-white text-base xtext-[1.1rem] px-4 lg:px-12 py-4 text-justify pb-12 lg:pb-40">
       <div>
         <Navbar />
       </div>
       <div>
-        <p className="text-[3.625rem] font-semibold py-6 pt-12">
+        <p className="text-[2.625rem] lg:text-[3.625rem] leading-tight font-semibold py-4 lg:py-6 pt-4 lg:pt-12">
           Privacy Policy
         </p>
       </div>
