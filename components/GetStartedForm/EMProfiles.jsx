@@ -68,13 +68,7 @@ function EMProfiles() {
           </span>
         </div>
       </div>
-      {/* <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 pb-2">
-        <div className="pt-4 px-4 pb-3 w-full">
-          <span className="text-xs opacity-70" id="ex_mgt" name="ex_mgt">
-            John Doe
-          </span>
-        </div>
-      </div> */}
+
       {/* ============================= */}
       <div className="emp-profile-1">
         <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 pbb-4 mb-4">

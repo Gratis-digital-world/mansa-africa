@@ -444,8 +444,8 @@ const uploadPart = (upload_data) => {
   // nextBtn[nextBtn.length - 1].innerHTML = "Processing ...";
   //********************** */
 
-  const u_url = "http://localhost:3001/upload2";
-  // const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
+  // const u_url = "http://localhost:3001/upload2";
+  const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
 
   fetch(u_url, {
     method: "POST",

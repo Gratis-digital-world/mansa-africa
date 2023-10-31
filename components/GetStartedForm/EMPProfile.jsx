@@ -6,84 +6,41 @@ function EMPProfile({ pid, onRemove }) {
   const [emp_fname_2, setEMPFname2] = useState();
   const [emp_lname_2, setEMPLname2] = useState();
 
-  const handleSaveEMP = () => {
-    const formId = document.getElementById("ubo-form");
-    // const fdata = new FormData(formId);
-    const fdata = new FormData();
-
-    // const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
-    const u_url = "http://localhost:3001/upload2";
-
-    fetch(u_url, {
-      method: "POST",
-      body: fdata,
-    })
-      .then((response) => {
-        console.log(response);
-        //Clear displayed message
-        //==========================
-        document.getElementById("emp_message").textContent = "Saved !";
-
-        setTimeout(() => {
-          document.getElementById("emp_message").textContent = "";
-        }, 5000);
-      })
-      .then((data) => {
-        console.log("EMP Saved !");
-        setShares2("");
-        setEMPFname2("");
-        setEMPLname2("");
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
-
   return (
-    <div className="emp-profile-3" id={`emp-profile-no-${pid}`}>
+    <div className={`emp-profile-rep-${pid}`}>
       <div className="text-sm border-[0.025rem] rounded-lg ml-8 mr-8 pbb-4 mb-4">
         <div className="pt-4 px-8 pb-3 w-full h-12">
-          <span className="text-xs opacity-70" id="emp_2" name="emp_2">
+          <span
+            className="text-xs opacity-70"
+            id={`emp_rep-${pid}`}
+            name={`emp_rep-${pid}`}
+          >
             {emp_fname_2} {emp_lname_2}
           </span>
-        </div>
-
-        <div className="hidden">
-          <input
-            className="w-full xhidden z-0 h-0"
-            type="text"
-            name="emp_id_key"
-            id="emp_id_key"
-            placeholder="jj@jj.com"
-            value={sessionStorage.getItem("app_email")}
-            // onChange={(e) => {
-            //   e.target.value;
-            //   setEMPFname2(e.target.value);
-            // }}
-          />
         </div>
 
         <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
           <div className="lg:pl-8 pl-4 pt-4 w-full">
             <span className="font-semibold">Legal First Name </span>
+            <span className="text-red-700">*</span>
           </div>
-          <div className="flex w-full pl-4 pt-2 items-end justify-end pr-4">
+          <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
             <input
               className="w-full"
               type="text"
               name="emp_firstname_2"
               id="emp_firstname_2"
               placeholder=""
-              value={emp_fname_2}
               onChange={(e) => setEMPFname2(e.target.value)}
-              // required
+              required
             />
           </div>
         </div>
 
         <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
-          <div className="lg:pl-8 pl-4 pt-2 w-full">
+          <div className="lg:pl-8 pl-4 pt-4 w-full">
             <span className="font-semibold">Legal Last Name </span>
+            <span className="text-red-700">*</span>
           </div>
           <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
             <input
@@ -92,16 +49,16 @@ function EMPProfile({ pid, onRemove }) {
               name="emp_lastname_2"
               id="emp_lastname_2"
               placeholder=""
-              value={emp_lname_2}
               onChange={(e) => setEMPLname2(e.target.value)}
-              // required
+              required
             />
           </div>
         </div>
 
         <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
-          <div className="lg:pl-8 pl-4 pt-2 w-full">
-            <span className="font-semibold">Bio</span>
+          <div className="lg:pl-8 pl-4 pt-4 w-full">
+            <span className="font-semibold">Bio </span>
+            <span className="text-red-700">*</span>
           </div>
           <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
             <textarea
@@ -111,21 +68,21 @@ function EMPProfile({ pid, onRemove }) {
               name="emp_bio_2"
               id="emp_bio_2"
               placeholder=""
-              // value={emp_lname_2}
-              // onChange={(e) => setEMPLname2(e.target.value)}
-              // required
+              required
             />
           </div>
         </div>
 
         <div className="text-sm border-t-[0.025rem] w-full lg:flex py-2 pb-6">
-          <div className="lg:pl-8 pl-4 pt-2 w-full">
-            <span className="font-semibold">Upload resume</span>
+          <div className="lg:pl-8 pl-4 pt-4 w-full">
+            <span className="font-semibold">Upload resume </span>
+            <span className="text-red-700">*</span>
           </div>
           <div className="flex w-full pl-4 pt-4 items-end justify-end pr-4">
             <UploadFile
               image={ClickToUpload.src}
-              input_id={"emp_resume_2"}
+              // input_id={"emp_resume_2"}
+              input_id={`emp_resume_2_${pid}`}
               file_type={
                 "image/png, image/jpeg, application/pdf, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               }
@@ -133,22 +90,18 @@ function EMPProfile({ pid, onRemove }) {
           </div>
         </div>
 
-        <div
-          className="text-center w-full text-xs text-green-500"
-          id="emp_message"
-        ></div>
-
+        {/* ++++++++++++++++++++++++++++++ */}
         <div className="text-sm border-t-[0.025rem] w-full flex py-2 xb-6">
           <div className="lg:pl-8 pl-4" onClick={onRemove}>
             <button
               type="button"
-              className="remove-profile-1 bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
+              className="remove-profile-rep bg-white shadow rounded-lg w-36 text-xs p-2 py-2 mt-6"
             >
               Remove profile
             </button>
           </div>
         </div>
-        {/* ====== */}
+        {/* ++++++++++++++++++++++++++++++ */}
       </div>
     </div>
   );

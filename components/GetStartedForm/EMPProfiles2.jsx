@@ -11,8 +11,8 @@ function EMPProfiles() {
     // const fdata = new FormData(formId);
     const fdata = new FormData();
 
-    // const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
-    const u_url = "http://localhost:3001/upload2";
+    const u_url = "https://mansa-96a6c794c4b6.herokuapp.com/upload2";
+    // const u_url = "http://localhost:3001/upload2";
 
     fetch(u_url, {
       method: "POST",
