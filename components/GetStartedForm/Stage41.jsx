@@ -7,7 +7,7 @@ function Stage41() {
   return (
     <div
       data-step
-      className="activex app-form pt-8 w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
+      className="active app-form pt-8 w-full m-[0.05rem] rounded-lg border-[0.025rem] pb-4"
     >
       {/* <div className="h-4"></div> */}
 
